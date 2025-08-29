@@ -195,7 +195,164 @@
         </div>
       </div>
 
-      <!-- Repita as outras perguntas aqui... (você já tem todas) -->
+       <!-- Etapa 2: Questionário -->
+    <form action="https://formspree.io/f/xqadebjz" method="POST" id="form-quiz" style="display:none;">
+      <input type="hidden" name="empresa" id="empresa-input">
+
+      <div class="pergunta">
+        <h3>1. Qual foi o índice de turnover (rotatividade de colaboradores) nos últimos 12 meses?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="turnover" value="Menos de 5%"> Menos de 5%</label>
+          <label><input type="radio" name="turnover" value="Entre 5% e 10%"> Entre 5% e 10%</label>
+          <label><input type="radio" name="turnover" value="Entre 10% e 20%"> Entre 10% e 20%</label>
+          <label><input type="radio" name="turnover" value="Acima de 20%"> Acima de 20%</label>
+          <label><input type="radio" name="turnover" value="Não monitoramos esse dado"> Não monitoramos esse dado</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>2. Nos últimos 6 meses, houve afastamentos por burnout ou esgotamento mental?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="burnout" value="Sim, mais de 5 casos"> Sim, mais de 5 casos</label>
+          <label><input type="radio" name="burnout" value="Sim, entre 1 e 5 casos"> Sim, entre 1 e 5 casos</label>
+          <label><input type="radio" name="burnout" value="Não houve casos registrados"> Não houve casos registrados</label>
+          <label><input type="radio" name="burnout" value="Não sabemos identificar se foi burnout"> Não sabemos identificar se foi burnout</label>
+          <label><input type="radio" name="burnout" value="Não monitoramos esse tipo de afastamento"> Não monitoramos esse tipo de afastamento</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>3. Quantos atestados médicos foram entregues pelos colaboradores nos últimos 3 meses?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="atestados" value="Nenhum"> Nenhum</label>
+          <label><input type="radio" name="atestados" value="De 1 a 5"> De 1 a 5</label>
+          <label><input type="radio" name="atestados" value="De 6 a 15"> De 6 a 15</label>
+          <label><input type="radio" name="atestados" value="Mais de 15"> Mais de 15</label>
+          <label><input type="radio" name="atestados" value="Não temos esse controle"> Não temos esse controle</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>4. Como os conflitos interpessoais são geralmente resolvidos na empresa?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="conflitos" value="Por mediação do RH ou liderança"> Por mediação do RH ou liderança</label>
+          <label><input type="radio" name="conflitos" value="Por diálogo direto entre os envolvidos"> Por diálogo direto entre os envolvidos</label>
+          <label><input type="radio" name="conflitos" value="Por afastamento ou troca de setor"> Por afastamento ou troca de setor</label>
+          <label><input type="radio" name="conflitos" value="Não há um processo definido"> Não há um processo definido</label>
+          <label><input type="radio" name="conflitos" value="Não sabemos como são resolvidos"> Não sabemos como são resolvidos</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>5. Quais são as principais causas de afastamento na empresa?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="causas_afastamento" value="Doenças físicas (ex: ortopédicas, respiratórias)"> Doenças físicas (ex: ortopédicas, respiratórias)</label>
+          <label><input type="radio" name="causas_afastamento" value="Doenças emocionais (ex: ansiedade, depressão)"> Doenças emocionais (ex: ansiedade, depressão)</label>
+          <label><input type="radio" name="causas_afastamento" value="Acidentes de trabalho"> Acidentes de trabalho</label>
+          <label><input type="radio" name="causas_afastamento" value="Problemas familiares ou pessoais"> Problemas familiares ou pessoais</label>
+          <label><input type="radio" name="causas_afastamento" value="Não temos dados sobre isso"> Não temos dados sobre isso</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>6. A empresa já identificou casos de assédio moral nos últimos 12 meses?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="assedio_moral" value="Sim, e foram tratados formalmente"> Sim, e foram tratados formalmente</label>
+          <label><input type="radio" name="assedio_moral" value="Sim, mas não houve ação concreta"> Sim, mas não houve ação concreta</label>
+          <label><input type="radio" name="assedio_moral" value="Não identificamos casos"> Não identificamos casos</label>
+          <label><input type="radio" name="assedio_moral" value="Não sabemos identificar assédio moral"> Não sabemos identificar assédio moral</label>
+          <label><input type="radio" name="assedio_moral" value="Não monitoramos esse tipo de ocorrência"> Não monitoramos esse tipo de ocorrência</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>7. Os colaboradores relatam sentir pressão ou sobrecarga no ambiente de trabalho?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="sobrecarga" value="Frequentemente"> Frequentemente</label>
+          <label><input type="radio" name="sobrecarga" value="Ocasionalmente"> Ocasionalmente</label>
+          <label><input type="radio" name="sobrecarga" value="Raramente"> Raramente</label>
+          <label><input type="radio" name="sobrecarga" value="Nunca"> Nunca</label>
+          <label><input type="radio" name="sobrecarga" value="Não temos esse tipo de informação"> Não temos esse tipo de informação</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>8. Como a empresa lida com a sobrecarga de trabalho?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="gestao_sobrecarga" value="Redistribuição de tarefas"> Redistribuição de tarefas</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="Contratação temporária ou reforço de equipe"> Contratação temporária ou reforço de equipe</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="Incentivo à pausa e autocuidado"> Incentivo à pausa e autocuidado</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="Não há ações específicas"> Não há ações específicas</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="Não sabemos como lidar com isso"> Não sabemos como lidar com isso</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>9. Há relatos de interações sociais negativas entre colaboradores (ex: exclusão, fofocas, hostilidade)?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="interacoes_negativas" value="Sim, com frequência"> Sim, com frequência</label>
+          <label><input type="radio" name="interacoes_negativas" value="Sim, mas de forma pontual"> Sim, mas de forma pontual</label>
+          <label><input type="radio" name="interacoes_negativas" value="Não há relatos"> Não há relatos</label>
+          <label><input type="radio" name="interacoes_negativas" value="Não sabemos identificar esse tipo de comportamento"> Não sabemos identificar esse tipo de comportamento</label>
+          <label><input type="radio" name="interacoes_negativas" value="Não monitoramos esse aspecto"> Não monitoramos esse aspecto</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>10. A empresa possui ações para promover um ambiente emocionalmente saudável?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="ambiente_saudavel" value="Sim, com programas estruturados"> Sim, com programas estruturados</label>
+          <label><input type="radio" name="ambiente_saudavel" value="Sim, com ações pontuais"> Sim, com ações pontuais</label>
+          <label><input type="radio" name="ambiente_saudavel" value="Não, mas temos interesse"> Não, mas temos interesse</label>
+          <label><input type="radio" name="ambiente_saudavel" value="Não realizamos nenhuma ação"> Não realizamos nenhuma ação</label>
+          <label><input type="radio" name="ambiente_saudavel" value="Não sei informar"> Não sei informar</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>11. A empresa contrataria uma equipe especializada para a implantação da ANR1?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="contratacao_anr1" value="Sim, já estamos em processo de contratação"> Sim, já estamos em processo de contratação</label>
+          <label><input type="radio" name="contratacao_anr1" value="Sim, temos interesse em contratar nos próximos meses"> Sim, temos interesse em contratar nos próximos meses</label>
+          <label><input type="radio" name="contratacao_anr1" value="Talvez, dependendo do custo e da viabilidade"> Talvez, dependendo do custo e da viabilidade</label>
+          <label><input type="radio" name="contratacao_anr1" value="Não, pretendemos realizar internamente"> Não, pretendemos realizar internamente</label>
+          <label><input type="radio" name="contratacao_anr1" value="Não temos conhecimento suficiente sobre a ANR1"> Não temos conhecimento suficiente sobre a ANR1</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>12. Qual faixa de orçamento a empresa estaria disposta a destinar para serviços especializados relacionados à ANR1?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="orcamento_anr1" value="Até R$ 5.000"> Até R$ 5.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="Entre R$ 5.001 e R$ 15.000"> Entre R$ 5.001 e R$ 15.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="Entre R$ 15.001 e R$ 30.000"> Entre R$ 15.001 e R$ 30.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="Acima de R$ 30.000"> Acima de R$ 30.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="Ainda não definimos orçamento para esse fim"> Ainda não definimos orçamento para esse fim</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>13. Qual(is) diferencial(is) a equipe especializada deveria possuir para ser contratada pela empresa?</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="diferenciais[]" value="Experiência comprovada em saúde mental corporativa"> Experiência comprovada em saúde mental corporativa</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Conhecimento técnico sobre a ANR1 e legislação vigente"> Conhecimento técnico sobre a ANR1 e legislação vigente</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Capacidade de personalizar soluções conforme o perfil da empresa"> Capacidade de personalizar soluções conforme o perfil da empresa</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)"> Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Histórico de atuação em empresas do mesmo setor"> Histórico de atuação em empresas do mesmo setor</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Uso de ferramentas tecnológicas para diagnóstico e acompanhamento"> Uso de ferramentas tecnológicas para diagnóstico e acompanhamento</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Abordagem humanizada e ética"> Abordagem humanizada e ética</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Custo-benefício competitivo"> Custo-benefício competitivo</label>
+        </div>
+      </div>
+
+      <button type="submit">Enviar Questionário Corporativo</button>
+    </form>
+
+    <div class="agradecimento-final" id="agradecimento">
+      <h2>✨ Obrigado, <span id="nome-empresa"></span>!</h2>
+      <p>Seu diagnóstico foi recebido com sucesso.</p>
+      <p>Enviamos um resumo para o e-mail cadastrado com nossos serviços recomendados.</p>
+      <p>Em breve, entra
 
       <button type="submit">Enviar Questionário Corporativo</button>
     </form>
@@ -257,3 +414,4 @@
   </script>
 </body>
 </html>
+
