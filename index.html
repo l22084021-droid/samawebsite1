@@ -194,139 +194,133 @@
       <input type="hidden" name="colaboradores" id="colaboradores-input">
 
       <div class="pergunta">
-        <h3>1. Qual foi o índice de turnover (rotatividade de colaboradores) nos últimos 12 meses?</h3>
+        <h3>1. Histórico de Demandas</h3>
         <div class="opcoes">
-          <label><input type="radio" name="turnover" value="Menos de 5%"> Menos de 5%</label>
-          <label><input type="radio" name="turnover" value="Entre 5% e 10%"> Entre 5% e 10%</label>
-          <label><input type="radio" name="turnover" value="Entre 10% e 20%"> Entre 10% e 20%</label>
-          <label><input type="radio" name="turnover" value="Acima de 20%"> Acima de 20%</label>
-          <label><input type="radio" name="turnover" value="Não monitoramos esse dado"> Não monitoramos esse dado</label>
+          <label><input type="radio" name="demanda" value="A"> A) Sim, mais de 5 casos</label>
+          <label><input type="radio" name="demanda" value="B"> B) Sim, entre 3 e 5 casos</label>
+          <label><input type="radio" name="demanda" value="C"> C) Sim, 1 ou 2 casos</label>
+          <label><input type="radio" name="demanda" value="D"> D) Nenhum caso, mas já houve advertências internas</label>
+          <label><input type="radio" name="demanda" value="E"> E) Não, nunca tivemos casos nem advertências</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>2. Nos últimos 6 meses, houve afastamentos por burnout ou esgotamento mental?</h3>
+        <h3>2. Percepção de Ocorrência Interna</h3>
         <div class="opcoes">
-          <label><input type="radio" name="burnout" value="Sim, mais de 5 casos"> Sim, mais de 5 casos</label>
-          <label><input type="radio" name="burnout" value="Sim, entre 1 e 5 casos"> Sim, entre 1 e 5 casos</label>
-          <label><input type="radio" name="burnout" value="Não houve casos registrados"> Não houve casos registrados</label>
-          <label><input type="radio" name="burnout" value="Não sabemos identificar se foi burnout"> Não sabemos identificar se foi burnout</label>
-          <label><input type="radio" name="burnout" value="Não monitoramos esse tipo de afastamento"> Não monitoramos esse tipo de afastamento</label>
+          <label><input type="radio" name="ocorrencia" value="A"> A) Sim, ocorre frequentemente e precisamos de intervenção urgente</label>
+          <label><input type="radio" name="ocorrencia" value="B"> B) Sim, ocorre ocasionalmente e exige atenção</label>
+          <label><input type="radio" name="ocorrencia" value="C"> C) Raramente ocorre, mas deve ser monitorado</label>
+          <label><input type="radio" name="ocorrencia" value="D"> D) Pouco provável, temos controle efetivo</label>
+          <label><input type="radio" name="ocorrencia" value="E"> E) Não ocorre, nossa empresa tem clima saudável e seguro</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>3. Quantos atestados médicos foram entregues pelos colaboradores nos últimos 3 meses?</h3>
+        <h3>3. Políticas e Prevenção</h3>
         <div class="opcoes">
-          <label><input type="radio" name="atestados" value="Nenhum"> Nenhum</label>
-          <label><input type="radio" name="atestados" value="De 1 a 5"> De 1 a 5</label>
-          <label><input type="radio" name="atestados" value="De 6 a 15"> De 6 a 15</label>
-          <label><input type="radio" name="atestados" value="Mais de 15"> Mais de 15</label>
-          <label><input type="radio" name="atestados" value="Não temos esse controle"> Não temos esse controle</label>
+          <label><input type="radio" name="politicas" value="A"> A) Sim, com políticas, treinamentos regulares e acompanhamento contínuo</label>
+          <label><input type="radio" name="politicas" value="B"> B) Sim, com políticas e treinamentos periódicos</label>
+          <label><input type="radio" name="politicas" value="C"> C) Sim, apenas políticas escritas sem treinamentos regulares</label>
+          <label><input type="radio" name="politicas" value="D"> D) Planejamos implementar políticas, mas ainda não existem</label>
+          <label><input type="radio" name="politicas" value="E"> E) Não, não temos políticas ou programas formais</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>4. Como os conflitos interpessoais são geralmente resolvidos na empresa?</h3>
+        <h3>4. Adequação às Políticas de Saúde e Segurança</h3>
         <div class="opcoes">
-          <label><input type="radio" name="conflitos" value="Por mediação do RH ou liderança"> Por mediação do RH ou liderança</label>
-          <label><input type="radio" name="conflitos" value="Por diálogo direto entre os envolvidos"> Por diálogo direto entre os envolvidos</label>
-          <label><input type="radio" name="conflitos" value="Por afastamento ou troca de setor"> Por afastamento ou troca de setor</label>
-          <label><input type="radio" name="conflitos" value="Não há um processo definido"> Não há um processo definido</label>
-          <label><input type="radio" name="conflitos" value="Não sabemos como são resolvidos"> Não sabemos como são resolvidos</label>
+          <label><input type="radio" name="adequacao" value="A"> A) Pouco adequada ou inexistente</label>
+          <label><input type="radio" name="adequacao" value="B"> B) Parcialmente adequada</label>
+          <label><input type="radio" name="adequacao" value="C"> C) Totalmente adequada</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>5. Quais são as principais causas de afastamento na empresa?</h3>
+        <h3>5. Existência de Programas Formais</h3>
         <div class="opcoes">
-          <label><input type="radio" name="causas_afastamento" value="Doenças físicas (ex: ortopédicas, respiratórias)"> Doenças físicas (ex: ortopédicas, respiratórias)</label>
-          <label><input type="radio" name="causas_afastamento" value="Doenças emocionais (ex: ansiedade, depressão)"> Doenças emocionais (ex: ansiedade, depressão)</label>
-          <label><input type="radio" name="causas_afastamento" value="Acidentes de trabalho"> Acidentes de trabalho</label>
-          <label><input type="radio" name="causas_afastamento" value="Problemas familiares ou pessoais"> Problemas familiares ou pessoais</label>
-          <label><input type="radio" name="causas_afastamento" value="Não temos dados sobre isso"> Não temos dados sobre isso</label>
+          <label><input type="radio" name="programas" value="A"> A) Inexistente ou esporádico</label>
+          <label><input type="radio" name="programas" value="B"> B) Programas regulares, sem acompanhamento individual</label>
+          <label><input type="radio" name="programas" value="C"> C) Programas contínuos, integrados e monitorados</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>6. A empresa já identificou casos de assédio moral nos últimos 12 meses?</h3>
+        <h3>6. Prevenção de Burnout</h3>
         <div class="opcoes">
-          <label><input type="radio" name="assedio_moral" value="Sim, e foram tratados formalmente"> Sim, e foram tratados formalmente</label>
-          <label><input type="radio" name="assedio_moral" value="Sim, mas não houve ação concreta"> Sim, mas não houve ação concreta</label>
-          <label><input type="radio" name="assedio_moral" value="Não identificamos casos"> Não identificamos casos</label>
-          <label><input type="radio" name="assedio_moral" value="Não sabemos identificar assédio moral"> Não sabemos identificar assédio moral</label>
-          <label><input type="radio" name="assedio_moral" value="Não monitoramos esse tipo de ocorrência"> Não monitoramos esse tipo de ocorrência</label>
+          <label><input type="radio" name="burnout" value="A"> A) Não há monitoramento nem prevenção</label>
+          <label><input type="radio" name="burnout" value="B"> B) Monitoramento ocasional ou ações preventivas esporádicas</label>
+          <label><input type="radio" name="burnout" value="C"> C) Avaliações periódicas com programas preventivos contínuos</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>7. Os colaboradores relatam sentir pressão ou sobrecarga no ambiente de trabalho?</h3>
+        <h3>7. Turnover nos últimos 12 meses</h3>
         <div class="opcoes">
-          <label><input type="radio" name="sobrecarga" value="Frequentemente"> Frequentemente</label>
-          <label><input type="radio" name="sobrecarga" value="Ocasionalmente"> Ocasionalmente</label>
-          <label><input type="radio" name="sobrecarga" value="Raramente"> Raramente</label>
-          <label><input type="radio" name="sobrecarga" value="Nunca"> Nunca</label>
-          <label><input type="radio" name="sobrecarga" value="Não temos esse tipo de informação"> Não temos esse tipo de informação</label>
+          <label><input type="radio" name="turnover" value="A"> A) Menos de 5%</label>
+          <label><input type="radio" name="turnover" value="B"> B) Entre 5% e 10%</label>
+          <label><input type="radio" name="turnover" value="C"> C) Entre 10% e 20%</label>
+          <label><input type="radio" name="turnover" value="D"> D) Acima de 20%</label>
+          <label><input type="radio" name="turnover" value="E"> E) Não monitoramos esse dado</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>8. Como a empresa lida com a sobrecarga de trabalho?</h3>
+        <h3>8. Afastamentos por Burnout</h3>
         <div class="opcoes">
-          <label><input type="radio" name="gestao_sobrecarga" value="Redistribuição de tarefas"> Redistribuição de tarefas</label>
-          <label><input type="radio" name="gestao_sobrecarga" value="Contratação temporária ou reforço de equipe"> Contratação temporária ou reforço de equipe</label>
-          <label><input type="radio" name="gestao_sobrecarga" value="Incentivo à pausa e autocuidado"> Incentivo à pausa e autocuidado</label>
-          <label><input type="radio" name="gestao_sobrecarga" value="Não há ações específicas"> Não há ações específicas</label>
-          <label><input type="radio" name="gestao_sobrecarga" value="Não sabemos como lidar com isso"> Não sabemos como lidar com isso</label>
+          <label><input type="radio" name="afastamentos" value="A"> A) Sim, mais de 5 casos</label>
+          <label><input type="radio" name="afastamentos" value="B"> B) Sim, entre 1 e 5 casos</label>
+          <label><input type="radio" name="afastamentos" value="C"> C) Não houve casos registrados</label>
+          <label><input type="radio" name="afastamentos" value="D"> D) Não sabemos identificar se foi burnout</label>
+          <label><input type="radio" name="afastamentos" value="E"> E) Não monitoramos esse tipo de afastamento</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>9. Há relatos de interações sociais negativas entre colaboradores (ex: exclusão, fofocas, hostilidade)?</h3>
+        <h3>9. Conflitos Interpessoais</h3>
         <div class="opcoes">
-          <label><input type="radio" name="interacoes_negativas" value="Sim, com frequência"> Sim, com frequência</label>
-          <label><input type="radio" name="interacoes_negativas" value="Sim, mas de forma pontual"> Sim, mas de forma pontual</label>
-          <label><input type="radio" name="interacoes_negativas" value="Não há relatos"> Não há relatos</label>
-          <label><input type="radio" name="interacoes_negativas" value="Não sabemos identificar esse tipo de comportamento"> Não sabemos identificar esse tipo de comportamento</label>
-          <label><input type="radio" name="interacoes_negativas" value="Não monitoramos esse aspecto"> Não monitoramos esse aspecto</label>
+          <label><input type="radio" name="conflitos" value="A"> A) Por mediação do RH ou liderança</label>
+          <label><input type="radio" name="conflitos" value="B"> B) Por diálogo direto entre os envolvidos</label>
+          <label><input type="radio" name="conflitos" value="C"> C) Por afastamento ou troca de setor</label>
+          <label><input type="radio" name="conflitos" value="D"> D) Não há um processo definido</label>
+          <label><input type="radio" name="conflitos" value="E"> E) Não sabemos como são resolvidos</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>10. A empresa possui ações para promover um ambiente emocionalmente saudável?</h3>
+        <h3>10. Causas de Afastamento</h3>
         <div class="opcoes">
-          <label><input type="radio" name="ambiente_saudavel" value="Sim, com programas estruturados"> Sim, com programas estruturados</label>
-          <label><input type="radio" name="ambiente_saudavel" value="Sim, com ações pontuais"> Sim, com ações pontuais</label>
-          <label><input type="radio" name="ambiente_saudavel" value="Não, mas temos interesse"> Não, mas temos interesse</label>
-          <label><input type="radio" name="ambiente_saudavel" value="Não realizamos nenhuma ação"> Não realizamos nenhuma ação</label>
-          <label><input type="radio" name="ambiente_saudavel" value="Não sei informar"> Não sei informar</label>
+          <label><input type="radio" name="causas_afastamento" value="A"> A) Doenças físicas (ex: ortopédicas, respiratórias)</label>
+          <label><input type="radio" name="causas_afastamento" value="B"> B) Doenças emocionais (ex: ansiedade, depressão)</label>
+          <label><input type="radio" name="causas_afastamento" value="C"> C) Acidentes de trabalho</label>
+          <label><input type="radio" name="causas_afastamento" value="D"> D) Problemas familiares ou pessoais</label>
+          <label><input type="radio" name="causas_afastamento" value="E"> E) Não temos dados sobre isso</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>11. A empresa contrataria uma equipe especializada para a implantação da ANR1?</h3>
+        <h3>11. Assédio Moral Identificado</h3>
         <div class="opcoes">
-          <label><input type="radio" name="contratacao_anr1" value="Sim, já estamos em processo de contratação"> Sim, já estamos em processo de contratação</label>
-          <label><input type="radio" name="contratacao_anr1" value="Sim, temos interesse em contratar nos próximos meses"> Sim, temos interesse em contratar nos próximos meses</label>
-          <label><input type="radio" name="contratacao_anr1" value="Talvez, dependendo do custo e da viabilidade"> Talvez, dependendo do custo e da viabilidade</label>
-          <label><input type="radio" name="contratacao_anr1" value="Não, pretendemos realizar internamente"> Não, pretendemos realizar internamente</label>
-          <label><input type="radio" name="contratacao_anr1" value="Não temos conhecimento suficiente sobre a ANR1"> Não temos conhecimento suficiente sobre a ANR1</label>
+          <label><input type="radio" name="assedio_moral" value="A"> A) Sim, e foram tratados formalmente</label>
+          <label><input type="radio" name="assedio_moral" value="B"> B) Sim, mas não houve ação concreta</label>
+          <label><input type="radio" name="assedio_moral" value="C"> C) Não identificamos casos</label>
+          <label><input type="radio" name="assedio_moral" value="D"> D) Não sabemos identificar assédio moral</label>
+          <label><input type="radio" name="assedio_moral" value="E"> E) Não monitoramos esse tipo de ocorrência</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>12. Qual faixa de orçamento a empresa estaria disposta a destinar para serviços especializados relacionados à ANR1?</h3>
+        <h3>12. Sobrecarga de Trabalho</h3>
         <div class="opcoes">
-          <label><input type="radio" name="orcamento_anr1" value="Até R$ 5.000"> Até R$ 5.000</label>
-          <label><input type="radio" name="orcamento_anr1" value="Entre R$ 5.001 e R$ 15.000"> Entre R$ 5.001 e R$ 15.000</label>
-          <label><input type="radio" name="orcamento_anr1" value="Entre R$ 15.001 e R$ 30.000"> Entre R$ 15.001 e R$ 30.000</label>
-          <label><input type="radio" name="orcamento_anr1" value="Acima de R$ 30.000"> Acima de R$ 30.000</label>
-          <label><input type="radio" name="orcamento_anr1" value="Ainda não definimos orçamento para esse fim"> Ainda não definimos orçamento para esse fim</label>
+          <label><input type="radio" name="sobrecarga" value="A"> A) Frequentemente</label>
+          <label><input type="radio" name="sobrecarga" value="B"> B) Ocasionalmente</label>
+          <label><input type="radio" name="sobrecarga" value="C"> C) Raramente</label>
+          <label><input type="radio" name="sobrecarga" value="D"> D) Nunca</label>
+          <label><input type="radio" name="sobrecarga" value="E"> E) Não temos esse tipo de informação</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>13. Qual(is) diferencial(is) a equipe especializada deveria possuir para ser contratada pela empresa?</h3>
+        <h3>13. Diferenciais para Contratação</h3>
         <div class="checkbox-group">
           <label><input type="checkbox" name="diferenciais[]" value="Experiência comprovada em saúde mental corporativa"> Experiência comprovada em saúde mental corporativa</label>
           <label><input type="checkbox" name="diferenciais[]" value="Conhecimento técnico sobre a ANR1 e legislação vigente"> Conhecimento técnico sobre a ANR1 e legislação vigente</label>
@@ -393,6 +387,205 @@
       const formData = new FormData(this);
       const empresa = formData.get('empresa');
 
+      // Calcular risco legal
+      let riscoLegal = "Baixo";
+      const demanda = formData.get('demanda');
+      if (demanda === 'A') riscoLegal = "Alto";
+      else if (demanda === 'B' || demanda === 'C') riscoLegal = "Médio";
+
+      // Calcular cultura e clima
+      let cultura = "Baixo";
+      const ocorrencia = formData.get('ocorrencia');
+      if (ocorrencia === 'A') cultura = "Alto";
+      else if (ocorrencia === 'B') cultura = "Médio";
+
+      // Calcular políticas
+      let politicas = "Baixo";
+      const politicasResposta = formData.get('politicas');
+      if (politicasResposta === 'E') politicas = "Alto";
+      else if (politicasResposta === 'C' || politicasResposta === 'D') politicas = "Médio";
+
+      // Calcular conformidade NR1
+      let nr1 = "Baixo";
+      const adequacao = formData.get('adequacao');
+      if (adequacao === 'A') nr1 = "Alto";
+      else if (adequacao === 'B') nr1 = "Médio";
+
+      // Calcular saúde mental
+      let saudeMental = "Baixo";
+      const programas = formData.get('programas');
+      if (programas === 'A') saudeMental = "Alto";
+      else if (programas === 'B') saudeMental = "Médio";
+
+      // Calcular burnout
+      let burnout = "Baixo";
+      const burnoutResposta = formData.get('burnout');
+      if (burnoutResposta === 'A') burnout = "Alto";
+      else if (burnoutResposta === 'B') burnout = "Médio";
+
+      // Calcular turnover
+      let turnover = "Baixo";
+      const turnoverResposta = formData.get('turnover');
+      if (turnoverResposta === 'D') turnover = "Alto";
+      else if (turnoverResposta === 'C') turnover = "Médio";
+
+      // Calcular afastamentos
+      let afastamentos = "Baixo";
+      const afastamentosResposta = formData.get('afastamentos');
+      if (afastamentosResposta === 'A') afastamentos = "Alto";
+      else if (afastamentosResposta === 'B') afastamentos = "Médio";
+
+      // Calcular conflitos
+      let conflitos = "Baixo";
+      const conflitosResposta = formData.get('conflitos');
+      if (conflitosResposta === 'D' || conflitosResposta === 'E') conflitos = "Alto";
+      else if (conflitosResposta === 'C') conflitos = "Médio";
+
+      // Calcular causas afastamento
+      let causasAfastamento = "Baixo";
+      const causasResposta = formData.get('causas_afastamento');
+      if (causasResposta === 'B') causasAfastamento = "Alto";
+      else if (causasResposta === 'A' || causasResposta === 'C') causasAfastamento = "Médio";
+
+      // Calcular assédio moral
+      let assedioMoral = "Baixo";
+      const assedioResposta = formData.get('assedio_moral');
+      if (assedioResposta === 'A' || assedioResposta === 'B') assedioMoral = "Alto";
+      else if (assedioResposta === 'C') assedioMoral = "Médio";
+
+      // Calcular sobrecarga
+      let sobrecarga = "Baixo";
+      const sobrecargaResposta = formData.get('sobrecarga');
+      if (sobrecargaResposta === 'A') sobrecarga = "Alto";
+      else if (sobrecargaResposta === 'B') sobrecarga = "Médio";
+
+      // Gerar relatório
+      const relatorio = `
+🚨 **Classificação de Urgência da Implantação NR1 / Saúde Mental**
+
+📌 **Empresa:** ${empresa}  
+📌 **CNPJ:** ${cnpj}  
+📌 **Número de Colaboradores:** ${colaboradores}
+
+---
+
+🔍 **Indicadores de Risco Legal**  
+• Risco: ${riscoLegal}  
+• Análise: ${demanda === 'A' ? 'Múltiplos casos aumentam risco de multas, indenizações e prejuízos financeiros diretos.' : 
+          demanda === 'B' || demanda === 'C' ? 'Alguns casos indicam necessidade de ação imediata.' : 
+          'Nenhum caso registrado, mas atenção ao futuro.'}
+
+---
+
+🔍 **Indicadores de Cultura e Clima Organizacional**  
+• Risco: ${cultura}  
+• Análise: ${ocorrencia === 'A' ? 'Percepção frequente de assédio moral exige intervenção urgente.' : 
+          ocorrencia === 'B' ? 'Ocorre ocasionalmente, mas precisa de atenção.' : 
+          'Clima saudável e seguro.'}
+
+---
+
+🔍 **Indicadores de Políticas e Prevenção**  
+• Risco: ${politicas}  
+• Análise: ${politicasResposta === 'E' ? 'Ausência de políticas formais é um sinal de alto risco.' : 
+          politicasResposta === 'C' || politicasResposta === 'D' ? 'Políticas parciais exigem fortalecimento.' : 
+          'Programas robustos e bem implementados.'}
+
+---
+
+🔍 **Indicadores de Conformidade com NR1**  
+• Risco: ${nr1}  
+• Análise: ${adequacao === 'A' ? 'Não conformidade pode gerar fiscalizações e multas trabalhistas.' : 
+          adequacao === 'B' ? 'Parcialmente adequada, mas com espaço para melhoria.' : 
+          'Totalmente adequada à legislação.'}
+
+---
+
+🔍 **Indicadores de Saúde Mental**  
+• Risco: ${saudeMental}  
+• Análise: ${programas === 'A' ? 'Inexistente ou esporádico, risco elevado de burnout.' : 
+          programas === 'B' ? 'Programas regulares, mas sem acompanhamento individual.' : 
+          'Programas contínuos, integrados e monitorados.'}
+
+---
+
+🔍 **Prevenção de Burnout**  
+• Risco: ${burnout}  
+• Análise: ${burnoutResposta === 'A' ? 'Sem monitoramento nem prevenção, risco alto.' : 
+          burnoutResposta === 'B' ? 'Monitoramento ocasional, mas insuficiente.' : 
+          'Avaliações periódicas com programas preventivos contínuos.'}
+
+---
+
+🔍 **Turnover nos Últimos 12 Meses**  
+• Risco: ${turnover}  
+• Análise: ${turnoverResposta === 'D' ? 'Acima de 20% indica grave problema de retenção.' : 
+          turnoverResposta === 'C' ? 'Entre 10% e 20%, risco médio.' : 
+          'Baixa rotatividade, indicador positivo.'}
+
+---
+
+🔍 **Afastamentos por Burnout**  
+• Risco: ${afastamentos}  
+• Análise: ${afastamentosResposta === 'A' ? 'Mais de 5 casos indicam falha no ambiente de trabalho.' : 
+          afastamentosResposta === 'B' ? 'Alguns casos indicam necessidade de atenção.' : 
+          'Sem registros, mas atenção ao futuro.'}
+
+---
+
+🔍 **Conflitos Interpessoais**  
+• Risco: ${conflitos}  
+• Análise: ${conflitosResposta === 'D' || conflitosResposta === 'E' ? 'Processo definido ausente, risco alto.' : 
+          conflitosResposta === 'C' ? 'Afastamento ou troca de setor indica falha na gestão.' : 
+          'Resolução por mediação ou diálogo, indicador positivo.'}
+
+---
+
+🔍 **Causas de Afastamento**  
+• Risco: ${causasAfastamento}  
+• Análise: ${causasResposta === 'B' ? 'Doenças emocionais predominam, risco alto.' : 
+          causasResposta === 'A' || causasResposta === 'C' ? 'Problemas físicos ou acidentes, risco médio.' : 
+          'Dados insuficientes para análise.'}
+
+---
+
+🔍 **Assédio Moral Identificado**  
+• Risco: ${assedioMoral}  
+• Análise: ${assedioResposta === 'A' || assedioResposta === 'B' ? 'Casos confirmados ou ignorados, risco alto.' : 
+          assedioResposta === 'C' ? 'Nenhum caso identificado, mas atenção ao futuro.' : 
+          'Ausência de monitoramento, risco alto.'}
+
+---
+
+🔍 **Sobrecarga de Trabalho**  
+• Risco: ${sobrecarga}  
+• Análise: ${sobrecargaResposta === 'A' ? 'Frequente, risco alto de burnout.' : 
+          sobrecargaResposta === 'B' ? 'Ocasional, mas precisa de atenção.' : 
+          'Rara ou inexistente, indicador positivo.'}
+
+---
+
+📊 **Classificação Final de Urgência**  
+• ${riscoLegal === 'Alto' || cultura === 'Alto' || politicas === 'Alto' || nr1 === 'Alto' || saudeMental === 'Alto' || burnout === 'Alto' || turnover === 'Alto' || afastamentos === 'Alto' || conflitos === 'Alto' || causasAfastamento === 'Alto' || assedioMoral === 'Alto' || sobrecarga === 'Alto' ? '🟢 Urgente: Alto risco legal + ausência de políticas de saúde mental + percepção frequente de assédio moral.' : 
+        (riscoLegal === 'Médio' || cultura === 'Médio' || politicas === 'Médio' || nr1 === 'Médio' || saudeMental === 'Médio' || burnout === 'Médio' || turnover === 'Médio' || afastamentos === 'Médio' || conflitos === 'Médio' || causasAfastamento === 'Médio' || assedioMoral === 'Médio' || sobrecarga === 'Médio') ? '🟡 Intermediário: Risco médio em pelo menos dois indicadores, programas limitados.' : 
+        '🟢 Baixo risco: Políticas implementadas, acompanhamento contínuo, poucas ocorrências de problemas.'}
+
+---
+
+💡 **Recomendações**  
+1. Priorize a implementação de políticas formais de saúde mental e NR1.  
+2. Realize treinamentos regulares com foco em prevenção de assédio moral e burnout.  
+3. Monitore periodicamente o clima organizacional com pesquisas internas.  
+4. Implemente programas de apoio psicológico para colaboradores.  
+5. Estabeleça um canal de denúncia anônimo para assédio moral.
+
+---
+
+📩 Este relatório foi gerado automaticamente pelo sistema SAMA.  
+Para mais informações, entre em contato com nosso time.
+      `;
+
+      // Enviar relatório via EmailJS
       fetch('https://formspree.io/f/xqadebjz', {
         method: 'POST',
         body: formData,
@@ -403,6 +596,10 @@
           document.getElementById('form-quiz').style.display = 'none';
           document.getElementById('nome-empresa').textContent = empresa;
           document.getElementById('agradecimento').style.display = 'block';
+
+          // Aqui você pode adicionar um script para enviar o relatório por e-mail via EmailJS
+          // Exemplo: usar EmailJS para enviar o relatório para o e-mail da empresa
+          console.log("Relatório gerado:", relatorio);
         } else {
           alert('Erro ao enviar. Por favor, tente novamente.');
         }
