@@ -217,35 +217,157 @@
       <button onclick="proximo()">Continuar →</button>
     </div>
 
-    <!-- Etapa 3: Questionário -->
+    <!-- Etapa 3: Questionário com 13 perguntas -->
     <form id="form-quiz" style="display:none;">
       <input type="hidden" name="empresa" id="empresa-input">
       <input type="hidden" name="cnpj" id="cnpj-input">
       <input type="hidden" name="colaboradores" id="colaboradores-input">
 
       <div class="pergunta">
-        <h3>1. Histórico de Demandas</h3>
+        <h3>1. Qual foi o índice de turnover (rotatividade de colaboradores) nos últimos 12 meses?</h3>
         <div class="opcoes">
-          <label><input type="radio" name="demanda" value="A"> A) Sim, mais de 5 casos</label>
-          <label><input type="radio" name="demanda" value="B"> B) Sim, entre 3 e 5 casos</label>
-          <label><input type="radio" name="demanda" value="C"> C) Sim, 1 ou 2 casos</label>
-          <label><input type="radio" name="demanda" value="D"> D) Nenhum caso, mas advertências</label>
-          <label><input type="radio" name="demanda" value="E"> E) Nunca tivemos casos</label>
+          <label><input type="radio" name="turnover" value="A"> A) Menos de 5%</label>
+          <label><input type="radio" name="turnover" value="B"> B) Entre 5% e 10%</label>
+          <label><input type="radio" name="turnover" value="C"> C) Entre 10% e 20%</label>
+          <label><input type="radio" name="turnover" value="D"> D) Acima de 20%</label>
+          <label><input type="radio" name="turnover" value="E"> E) Não monitoramos esse dado</label>
         </div>
       </div>
 
       <div class="pergunta">
-        <h3>2. Percepção de Ocorrência Interna</h3>
+        <h3>2. Nos últimos 6 meses, houve afastamentos por burnout ou esgotamento mental?</h3>
         <div class="opcoes">
-          <label><input type="radio" name="ocorrencia" value="A"> A) Ocorre frequentemente</label>
-          <label><input type="radio" name="ocorrencia" value="B"> B) Ocorre ocasionalmente</label>
-          <label><input type="radio" name="ocorrencia" value="C"> C) Raramente ocorre</label>
-          <label><input type="radio" name="ocorrencia" value="D"> D) Pouco provável</label>
-          <label><input type="radio" name="ocorrencia" value="E"> E) Não ocorre</label>
+          <label><input type="radio" name="burnout" value="A"> A) Sim, mais de 5 casos</label>
+          <label><input type="radio" name="burnout" value="B"> B) Sim, entre 1 e 5 casos</label>
+          <label><input type="radio" name="burnout" value="C"> C) Não houve casos registrados</label>
+          <label><input type="radio" name="burnout" value="D"> D) Não sabemos identificar se foi burnout</label>
+          <label><input type="radio" name="burnout" value="E"> E) Não monitoramos esse tipo de afastamento</label>
         </div>
       </div>
 
-      <!-- Adicione as outras perguntas aqui -->
+      <div class="pergunta">
+        <h3>3. Quantos atestados médicos foram entregues pelos colaboradores nos últimos 3 meses?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="atestados" value="A"> A) Nenhum</label>
+          <label><input type="radio" name="atestados" value="B"> B) De 1 a 5</label>
+          <label><input type="radio" name="atestados" value="C"> C) De 6 a 15</label>
+          <label><input type="radio" name="atestados" value="D"> D) Mais de 15</label>
+          <label><input type="radio" name="atestados" value="E"> E) Não temos esse controle</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>4. Como os conflitos interpessoais são geralmente resolvidos na empresa?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="conflitos" value="A"> A) Por mediação do RH ou liderança</label>
+          <label><input type="radio" name="conflitos" value="B"> B) Por diálogo direto entre os envolvidos</label>
+          <label><input type="radio" name="conflitos" value="C"> C) Por afastamento ou troca de setor</label>
+          <label><input type="radio" name="conflitos" value="D"> D) Não há um processo definido</label>
+          <label><input type="radio" name="conflitos" value="E"> E) Não sabemos como são resolvidos</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>5. Quais são as principais causas de afastamento na empresa?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="causas_afastamento" value="A"> A) Doenças físicas (ex: ortopédicas, respiratórias)</label>
+          <label><input type="radio" name="causas_afastamento" value="B"> B) Doenças emocionais (ex: ansiedade, depressão)</label>
+          <label><input type="radio" name="causas_afastamento" value="C"> C) Acidentes de trabalho</label>
+          <label><input type="radio" name="causas_afastamento" value="D"> D) Problemas familiares ou pessoais</label>
+          <label><input type="radio" name="causas_afastamento" value="E"> E) Não temos dados sobre isso</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>6. A empresa já identificou casos de assédio moral nos últimos 12 meses?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="assedio_moral" value="A"> A) Sim, e foram tratados formalmente</label>
+          <label><input type="radio" name="assedio_moral" value="B"> B) Sim, mas não houve ação concreta</label>
+          <label><input type="radio" name="assedio_moral" value="C"> C) Não identificamos casos</label>
+          <label><input type="radio" name="assedio_moral" value="D"> D) Não sabemos identificar assédio moral</label>
+          <label><input type="radio" name="assedio_moral" value="E"> E) Não monitoramos esse tipo de ocorrência</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>7. Os colaboradores relatam sentir pressão ou sobrecarga no ambiente de trabalho?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="sobrecarga" value="A"> A) Frequentemente</label>
+          <label><input type="radio" name="sobrecarga" value="B"> B) Ocasionalmente</label>
+          <label><input type="radio" name="sobrecarga" value="C"> C) Raramente</label>
+          <label><input type="radio" name="sobrecarga" value="D"> D) Nunca</label>
+          <label><input type="radio" name="sobrecarga" value="E"> E) Não temos esse tipo de informação</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>8. Como a empresa lida com a sobrecarga de trabalho?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="gestao_sobrecarga" value="A"> A) Redistribuição de tarefas</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="B"> B) Contratação temporária ou reforço de equipe</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="C"> C) Incentivo à pausa e autocuidado</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="D"> D) Não há ações específicas</label>
+          <label><input type="radio" name="gestao_sobrecarga" value="E"> E) Não sabemos como lidar com isso</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>9. Há relatos de interações sociais negativas entre colaboradores (ex: exclusão, fofocas, hostilidade)?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="interacoes_negativas" value="A"> A) Sim, com frequência</label>
+          <label><input type="radio" name="interacoes_negativas" value="B"> B) Sim, mas de forma pontual</label>
+          <label><input type="radio" name="interacoes_negativas" value="C"> C) Não há relatos</label>
+          <label><input type="radio" name="interacoes_negativas" value="D"> D) Não sabemos identificar esse tipo de comportamento</label>
+          <label><input type="radio" name="interacoes_negativas" value="E"> E) Não monitoramos esse aspecto</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>10. A empresa possui ações para promover um ambiente emocionalmente saudável?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="ambiente_saudavel" value="A"> A) Sim, com programas estruturados</label>
+          <label><input type="radio" name="ambiente_saudavel" value="B"> B) Sim, com ações pontuais</label>
+          <label><input type="radio" name="ambiente_saudavel" value="C"> C) Não, mas temos interesse</label>
+          <label><input type="radio" name="ambiente_saudavel" value="D"> D) Não realizamos nenhuma ação</label>
+          <label><input type="radio" name="ambiente_saudavel" value="E"> E) Não sei informar</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>11. A empresa contrataria uma equipe especializada para a implantação da ANR1?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="contratacao_anr1" value="A"> A) Sim, já estamos em processo de contratação</label>
+          <label><input type="radio" name="contratacao_anr1" value="B"> B) Sim, temos interesse em contratar nos próximos meses</label>
+          <label><input type="radio" name="contratacao_anr1" value="C"> C) Talvez, dependendo do custo e da viabilidade</label>
+          <label><input type="radio" name="contratacao_anr1" value="D"> D) Não, pretendemos realizar internamente</label>
+          <label><input type="radio" name="contratacao_anr1" value="E"> E) Não temos conhecimento suficiente sobre a ANR1</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>12. Qual faixa de orçamento a empresa estaria disposta a destinar para serviços especializados relacionados à ANR1?</h3>
+        <div class="opcoes">
+          <label><input type="radio" name="orcamento_anr1" value="A"> A) Até R$ 5.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="B"> B) Entre R$ 5.001 e R$ 15.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="C"> C) Entre R$ 15.001 e R$ 30.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="D"> D) Acima de R$ 30.000</label>
+          <label><input type="radio" name="orcamento_anr1" value="E"> E) Ainda não definimos orçamento para esse fim</label>
+        </div>
+      </div>
+
+      <div class="pergunta">
+        <h3>13. Qual(is) diferencial(is) a equipe especializada deveria possuir para ser contratada pela empresa?</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="diferenciais[]" value="Experiência comprovada em saúde mental corporativa"> Experiência comprovada em saúde mental corporativa</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Conhecimento técnico sobre a ANR1 e legislação vigente"> Conhecimento técnico sobre a ANR1 e legislação vigente</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Capacidade de personalizar soluções conforme o perfil da empresa"> Capacidade de personalizar soluções conforme o perfil da empresa</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)"> Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Histórico de atuação em empresas do mesmo setor"> Histórico de atuação em empresas do mesmo setor</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Uso de ferramentas tecnológicas para diagnóstico e acompanhamento"> Uso de ferramentas tecnológicas para diagnóstico e acompanhamento</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Abordagem humanizada e ética"> Abordagem humanizada e ética</label>
+          <label><input type="checkbox" name="diferenciais[]" value="Custo-benefício competitivo"> Custo-benefício competitivo</label>
+        </div>
+      </div>
 
       <button type="submit">Gerar Relatório e Enviar</button>
     </form>
@@ -310,17 +432,19 @@
       const cnpj = formData.get('cnpj');
       const colaboradores = formData.get('colaboradores');
 
-      // Cálculo de conformidade
+      // Mapeamento de pontuação (E = 5 pontos, A = 1 ponto)
       const valores = { A: 1, B: 2, C: 3, D: 4, E: 5 };
-      const totalPerguntas = 13;
+      const totalPerguntas = 12; // 12 perguntas de rádio
       let pontuacaoTotal = 0;
 
+      // Somar respostas das perguntas de rádio
       for (let [key, value] of formData.entries()) {
-        if (!['empresa', 'cnpj', 'colaboradores'].includes(key)) {
+        if (key !== 'empresa' && key !== 'cnpj' && key !== 'colaboradores' && !key.includes('diferenciais')) {
           pontuacaoTotal += valores[value] || 0;
         }
       }
 
+      // Calcular porcentagem (máximo possível: 12 * 5 = 60)
       const maximoPossivel = totalPerguntas * 5;
       const porcentagem = Math.round((pontuacaoTotal / maximoPossivel) * 100);
 
@@ -338,6 +462,9 @@
       }
 
       // Gerar relatório em texto
+      const diferencias = formData.getAll('diferenciais[]');
+      const diferenciasTexto = diferencias.length > 0 ? diferencias.join(', ') : 'Nenhum diferencial selecionado';
+
       const relatorio = `
 🌟 **RELATÓRIO DE CONFORMIDADE ANR1** 🌟
 
@@ -355,12 +482,8 @@ ${porcentagem >= 80
     ? "⚠️ Sua empresa possui políticas básicas, mas há pontos críticos que precisam de atenção e melhoria."
     : "🔴 Sua empresa está com alto risco legal e emocional. Falta de políticas formais e prevenção ao assédio moral."}
 
-💡 **Recomendações:**
-${porcentagem >= 80 
-  ? "• Continue monitorando com auditorias semestrais.\n• Fortaleça programas de saúde mental.\n• Compartilhe boas práticas com outras empresas."
-  : porcentagem >= 50 
-    ? "• Implemente treinamentos regulares sobre saúde mental.\n• Crie um canal de denúncia anônimo.\n• Fortaleça a cultura de prevenção."
-    : "• Urgente: implantação imediata da ANR1.\n• Contrate equipe especializada.\n• Realize diagnóstico profundo do clima organizacional."}
+💡 **Diferenciais Desejados para Contratação:**
+• ${diferenciasTexto}
 
 📩 Este relatório foi gerado automaticamente pelo sistema SAMA.
       `;
@@ -386,7 +509,6 @@ ${porcentagem >= 80
 
       emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
         .then(() => {
-          // Mostrar resultado
           document.getElementById('nome-empresa').textContent = empresa;
           document.getElementById('porcentagem').textContent = porcentagem + '%';
           document.getElementById('nivel').textContent = nivel;
@@ -399,10 +521,8 @@ ${porcentagem >= 80
         .catch(error => {
           console.error('Erro ao enviar e-mail:', error);
           alert('Erro ao enviar relatório. Mas seus dados foram registrados.');
-          // Mesmo com erro, mostra o resultado
           document.getElementById('nome-empresa').textContent = empresa;
           document.getElementById('porcentagem').textContent = porcentagem + '%';
-          document.getElementById('nivel').textContent = nivel;
           document.getElementById('form-quiz').style.display = 'none';
           document.getElementById('resultado').style.display = 'block';
         });
