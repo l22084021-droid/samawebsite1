@@ -3,34 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SAMA - Diagnóstico Corporativo</title>
+  <title>SAMA - Diagnóstico ANR1</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --fundo: linear-gradient(135deg, #0f2c1e, #1a4a30);
-      --card: #143d2a;
-      --card-hover: #1a5235;
-      --texto: #e0f7e9;
-      --destaque: #4ade80;
-      --destaque-claro: #a7f3d0;
-      --texto-secundario: #b8e8c5;
-      --borda: #2d7a50;
-      --icone: #6ee7b7;
+      --fundo: #e8f5e9;
+      --verde: #65a533;
+      --verde-escuro: #4e7d2d;
+      --branco: #ffffff;
+      --texto: #2d3748;
+      --cinza: #6c757d;
+      --sombra: rgba(101, 165, 51, 0.1);
     }
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       transition: all 0.3s ease;
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--fundo);
+      background-color: var(--fundo);
       color: var(--texto);
       line-height: 1.8;
       min-height: 100vh;
       padding: 20px;
-      background-attachment: fixed;
     }
     .container {
       max-width: 900px;
@@ -40,43 +37,39 @@
     header {
       text-align: center;
       margin-bottom: 40px;
-      animation: fadeIn 1s ease;
     }
     header img {
       max-width: 240px;
       height: auto;
       border-radius: 16px;
       margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(74, 222, 128, 0.2);
-      border: 2px solid var(--borda);
+      border: 3px solid var(--verde);
     }
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2.6rem;
-      font-weight: 600;
-      color: var(--destaque);
-      letter-spacing: -0.5px;
-      text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+      color: var(--verde-escuro);
+      margin-bottom: 10px;
     }
     h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2.1rem;
-      color: var(--destaque);
+      color: var(--verde-escuro);
       margin: 25px 0 15px;
     }
     h3 {
-      color: var(--destaque-claro);
+      color: var(--verde);
       margin: 20px 0 10px;
       font-weight: 600;
     }
     p {
       font-size: 17px;
-      color: var(--texto-secundario);
+      color: var(--texto);
       margin-bottom: 16px;
     }
     .btn {
       display: inline-block;
-      background: linear-gradient(90deg, var(--destaque), #22c55e);
+      background: linear-gradient(90deg, var(--verde), var(--verde-escuro));
       color: white;
       padding: 16px 32px;
       margin: 20px 0;
@@ -84,38 +77,26 @@
       text-decoration: none;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
+      box-shadow: 0 6px 20px var(--sombra);
       border: none;
       font-size: 18px;
-      transition: all 0.3s;
-      font-family: 'Inter', sans-serif;
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
-      background: linear-gradient(90deg, #22c55e, #16a34a);
+      box-shadow: 0 8px 30px rgba(101, 165, 51, 0.4);
     }
     .section {
-      background: var(--card);
+      background: var(--branco);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px var(--sombra);
       margin-bottom: 30px;
-      border: 1px solid var(--borda);
-      backdrop-filter: blur(4px);
-    }
-    .section:hover {
-      background: var(--card-hover);
-      transform: translateY(-5px);
+      border: 1px solid #e0e0e0;
     }
     .pergunta {
       margin-bottom: 28px;
       padding-bottom: 18px;
-      border-bottom: 1px solid var(--borda);
-      transition: all 0.3s;
-    }
-    .pergunta:hover {
-      border-bottom-color: var(--destaque);
+      border-bottom: 1px solid #eee;
     }
     .pergunta h3 {
       font-size: 1.3rem;
@@ -126,31 +107,23 @@
       cursor: pointer;
       padding: 8px 12px;
       border-radius: 8px;
-      transition: all 0.2s;
     }
     .opcoes label:hover {
-      background: rgba(74, 222, 128, 0.1);
-      color: var(--destaque);
-      padding-left: 16px;
+      background: rgba(101, 165, 51, 0.1);
     }
     .opcoes input[type="radio"] {
-      accent-color: var(--destaque);
+      accent-color: var(--verde);
       margin-right: 10px;
     }
     input[type="text"], input[type="number"] {
       width: 100%;
       padding: 14px;
       border-radius: 10px;
-      border: 1px solid var(--borda);
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      border: 1px solid #ccc;
       font-size: 16px;
     }
-    input[type="text"]::placeholder, input[type="number"]::placeholder {
-      color: var(--texto-secundario);
-    }
     button {
-      background: linear-gradient(90deg, var(--destaque), #22c55e);
+      background: linear-gradient(90deg, var(--verde), var(--verde-escuro));
       color: white;
       padding: 16px 30px;
       border: none;
@@ -160,102 +133,70 @@
       cursor: pointer;
       width: 100%;
       margin-top: 20px;
-      box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
-      transition: all 0.3s;
-      font-family: 'Inter', sans-serif;
+      box-shadow: 0 6px 20px var(--sombra);
     }
     button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
     }
-    .agradecimento-final {
+    .resultado-box {
       text-align: center;
       padding: 40px;
-      background: rgba(20, 61, 42, 0.9);
-      border: 2px solid var(--destaque);
+      background: var(--branco);
       border-radius: 20px;
+      box-shadow: 0 10px 30px var(--sombra);
       margin-top: 30px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
+      border: 2px solid var(--verde);
       display: none;
     }
-    .agradecimento-final h2 {
-      color: var(--destaque);
+    .porcentagem {
       font-family: 'Orbitron', sans-serif;
-    }
-    .risco-box {
-      padding: 20px;
-      border-radius: 14px;
+      font-size: 5rem;
+      color: var(--verde);
       margin: 20px 0;
+    }
+    .nivel {
+      font-size: 1.5rem;
       font-weight: 600;
-      text-align: center;
-      font-size: 1.3rem;
-      border: 1px solid var(--borda);
+      margin-bottom: 20px;
     }
     .risco-alto {
-      background: rgba(220, 38, 38, 0.2);
-      color: #fca5a5;
-      border-color: #b91c1c;
+      color: #e53e3e;
     }
     .risco-medio {
-      background: rgba(251, 146, 60, 0.2);
-      color: #fb923c;
-      border-color: #c2410c;
+      color: #dd6b20;
     }
     .risco-baixo {
-      background: rgba(34, 197, 94, 0.2);
-      color: #6ee7b7;
-      border-color: #16a34a;
+      color: var(--verde);
     }
     footer {
       text-align: center;
       margin-top: 50px;
       padding: 20px;
-      color: var(--texto-secundario);
+      color: var(--cinza);
       font-size: 14px;
-      border-top: 1px solid var(--borda);
-      opacity: 0.8;
     }
-
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-    }
-
-    /* Esconde o que não é necessário */
-    #introducao, #form-quiz, #agradecimento { display: none; }
-    #introducao { display: block; }
   </style>
 </head>
 <body>
 
   <div class="container">
     <header>
-      <img src="https://i.imgur.com/rH218zu.png" alt="SAMA PARA + EQUILÍBRIO" class="logo pulse">
+      <img src="https://i.imgur.com/rH218zu.png" alt="SAMA PARA + EQUILÍBRIO" class="logo">
       <h1>SAMA PARA + EQUILÍBRIO</h1>
-      <p>Diagnóstico Inteligente de Saúde Mental Corporativa</p>
+      <p>Diagnóstico de Conformidade com a ANR1</p>
     </header>
 
     <!-- Etapa 1: Introdução -->
     <div id="introducao" class="section">
-      <h2>⚡ Diagnóstico Automático</h2>
-      <p>Responda 13 perguntas e receba em segundos:</p>
-      <ul style="list-style: none; margin: 20px 0;">
-        <li>📊 Porcentagem de risco legal e emocional</li>
-        <li>🔍 Motivos que impactaram o resultado</li>
-        <li>🎯 Classificação de urgência (Alto/Médio/Baixo)</li>
-        <li>💡 Recomendações personalizadas para sua empresa</li>
+      <h2>📊 Diagnóstico ANR1</h2>
+      <p>Responda 13 perguntas para receber um relatório completo com:</p>
+      <ul>
+        <li>✅ Porcentagem de conformidade com a norma</li>
+        <li>🔍 Análise detalhada dos pontos críticos</li>
+        <li>💡 Recomendações personalizadas</li>
+        <li>📩 Relatório enviado automaticamente para o e-mail da SAMA</li>
       </ul>
-      <a href="#" class="btn">Iniciar Diagnóstico</a>
+      <button onclick="mostrarFormulario()" class="btn">Iniciar Diagnóstico</button>
     </div>
 
     <!-- Etapa 2: Dados da Empresa -->
@@ -304,41 +245,33 @@
         </div>
       </div>
 
-      <!-- Adicione as outras 11 perguntas aqui -->
+      <!-- Adicione as outras perguntas aqui -->
 
-      <button type="submit">Gerar Relatório Inteligente</button>
+      <button type="submit">Gerar Relatório e Enviar</button>
     </form>
 
-    <!-- Etapa 4: Relatório Final -->
-    <div class="agradecimento-final" id="agradecimento">
-      <h2>📊 Relatório de Diagnóstico</h2>
+    <!-- Etapa 4: Resultado -->
+    <div class="resultado-box" id="resultado">
+      <h2>✨ Relatório Enviado!</h2>
       <p><strong>Empresa:</strong> <span id="nome-empresa"></span></p>
-      <p><strong>CNPJ:</strong> <span id="cnpj-resultado"></span></p>
-      <p><strong>Colaboradores:</strong> <span id="colaboradores-resultado"></span></p>
-
-      <div id="risco-total" class="risco-box"></div>
-
-      <h3>🔍 Motivos da Pontuação</h3>
-      <div id="motivos"></div>
-
-      <h3>🎯 Classificação de Urgência</h3>
-      <div id="urgencia"></div>
-
-      <h3>💡 Recomendações</h3>
-      <div id="recomendacoes"></div>
-
-      <p style="margin-top: 30px; font-size: 16px;">
-        Em breve, nossa equipe entrará em contato com você.
-      </p>
+      <div id="porcentagem" class="porcentagem">76%</div>
+      <div id="nivel" class="nivel">Nível de Conformidade</div>
+      <p>Seu diagnóstico foi recebido com sucesso. Em breve, nossa equipe entrará em contato.</p>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 SAMA PARA + EQUILÍBRIO. Todos os direitos reservados.<br>
-    Tecnologia com propósito, saúde mental com estrutura.
+    &copy; 2025 SAMA PARA + EQUILÍBRIO. Todos os direitos reservados.
   </footer>
 
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    // 🔑 Substitua com suas chaves do EmailJS
+    (function() {
+      emailjs.init("YOUR_USER_ID"); // Ex: user_abc123def456
+    })();
+
     function mostrarFormulario() {
       document.getElementById('introducao').style.display = 'none';
       document.getElementById('etapa-empresa').style.display = 'block';
@@ -377,11 +310,10 @@
       const cnpj = formData.get('cnpj');
       const colaboradores = formData.get('colaboradores');
 
-      // Cálculo de pontuação
-      const valores = { A: 5, B: 4, C: 3, D: 2, E: 1 };
+      // Cálculo de conformidade
+      const valores = { A: 1, B: 2, C: 3, D: 4, E: 5 };
       const totalPerguntas = 13;
       let pontuacaoTotal = 0;
-      let maximoPossivel = totalPerguntas * 5;
 
       for (let [key, value] of formData.entries()) {
         if (!['empresa', 'cnpj', 'colaboradores'].includes(key)) {
@@ -389,84 +321,91 @@
         }
       }
 
+      const maximoPossivel = totalPerguntas * 5;
       const porcentagem = Math.round((pontuacaoTotal / maximoPossivel) * 100);
 
-      // Nível de risco
-      let nivelRisco, classe;
-      if (porcentagem >= 70) {
-        nivelRisco = `🚨 Risco Alto (${porcentagem}%)`;
-        classe = 'risco-alto';
-      } else if (porcentagem >= 40) {
-        nivelRisco = `⚠️ Risco Médio (${porcentagem}%)`;
-        classe = 'risco-medio';
+      // Classificação
+      let nivel, cor;
+      if (porcentagem >= 80) {
+        nivel = "Alta Conformidade";
+        cor = "var(--verde)";
+      } else if (porcentagem >= 50) {
+        nivel = "Conformidade Média";
+        cor = "#dd6b20";
       } else {
-        nivelRisco = `✅ Risco Baixo (${porcentagem}%)`;
-        classe = 'risco-baixo';
+        nivel = "Baixa Conformidade";
+        cor = "#e53e3e";
       }
 
-      // Motivos
-      let motivos = [];
-      if (formData.get('demanda') === 'A' || formData.get('demanda') === 'B') {
-        motivos.push("Histórico de demandas trabalhistas");
-      }
-      if (formData.get('ocorrencia') === 'A' || formData.get('ocorrencia') === 'B') {
-        motivos.push("Percepção frequente de assédio moral");
-      }
-      if (formData.get('politicas') === 'E' || formData.get('politicas') === 'D') {
-        motivos.push("Ausência de políticas de prevenção");
-      }
+      // Gerar relatório em texto
+      const relatorio = `
+🌟 **RELATÓRIO DE CONFORMIDADE ANR1** 🌟
 
-      // Urgência
-      let urgencia;
-      if (porcentagem >= 70) {
-        urgencia = "🔴 <strong>Urgente</strong>: Necessidade imediata de implantação da ANR1.";
-      } else if (porcentagem >= 40) {
-        urgencia = "🟡 <strong>Intermediário</strong>: Recomendado início em até 3 meses.";
-      } else {
-        urgencia = "🟢 <strong>Baixa Urgência</strong>: Manutenção de boas práticas.";
-      }
+🏢 **Empresa:** ${empresa}
+📋 **CNPJ:** ${cnpj}
+👥 **Colaboradores:** ${colaboradores}
 
-      // Recomendações
-      let recomendacoes = `
-        <ul style="text-align: left; margin-left: 20px;">
-          <li>Implementar políticas formais de saúde mental.</li>
-          <li>Realizar treinamentos regulares com lideranças.</li>
-          <li>Monitorar clima organizacional trimestralmente.</li>
-          <li>Contratar equipe especializada para ANR1.</li>
-        </ul>
+📊 **Porcentagem de Conformidade:** ${porcentagem}%
+🎯 **Nível:** ${nivel}
+
+🔍 **Análise Detalhada:**
+${porcentagem >= 80 
+  ? "✅ Sua empresa está em excelente conformidade com a ANR1. Práticas robustas, cultura saudável e prevenção ativa."
+  : porcentagem >= 50 
+    ? "⚠️ Sua empresa possui políticas básicas, mas há pontos críticos que precisam de atenção e melhoria."
+    : "🔴 Sua empresa está com alto risco legal e emocional. Falta de políticas formais e prevenção ao assédio moral."}
+
+💡 **Recomendações:**
+${porcentagem >= 80 
+  ? "• Continue monitorando com auditorias semestrais.\n• Fortaleça programas de saúde mental.\n• Compartilhe boas práticas com outras empresas."
+  : porcentagem >= 50 
+    ? "• Implemente treinamentos regulares sobre saúde mental.\n• Crie um canal de denúncia anônimo.\n• Fortaleça a cultura de prevenção."
+    : "• Urgente: implantação imediata da ANR1.\n• Contrate equipe especializada.\n• Realize diagnóstico profundo do clima organizacional."}
+
+📩 Este relatório foi gerado automaticamente pelo sistema SAMA.
       `;
 
-      // Atualizar tela
-      document.getElementById('nome-empresa').textContent = empresa;
-      document.getElementById('cnpj-resultado').textContent = cnpj;
-      document.getElementById('colaboradores-resultado').textContent = colaboradores;
-
-      document.getElementById('risco-total').className = `risco-box ${classe}`;
-      document.getElementById('risco-total').textContent = nivelRisco;
-
-      document.getElementById('motivos').innerHTML = motivos.length > 0 
-        ? "<p>Principais causas:</p><ul>" + motivos.map(m => `<li>${m}</li>`).join('') + "</ul>"
-        : "<p>Nenhum fator de risco significativo identificado.</p>";
-
-      document.getElementById('urgencia').innerHTML = urgencia;
-      document.getElementById('recomendacoes').innerHTML = recomendacoes;
-
-      // Mostrar relatório
-      document.getElementById('form-quiz').style.display = 'none';
-      document.getElementById('agradecimento').style.display = 'block';
-
-      // Enviar dados (opcional)
+      // Enviar dados para Formspree (opcional)
       fetch('https://formspree.io/f/xqadebjz', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
       }).catch(console.error);
-    });
 
-    // Botão inicial
-    document.querySelector('.btn').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarFormulario();
+      // Enviar relatório por e-mail via EmailJS
+      const templateParams = {
+        to_email: 'paramaisequilibriosama@gmail.com',
+        to_name: 'SAMA',
+        empresa: empresa,
+        cnpj: cnpj,
+        colaboradores: colaboradores,
+        porcentagem: porcentagem,
+        nivel: nivel,
+        relatorio: relatorio
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(() => {
+          // Mostrar resultado
+          document.getElementById('nome-empresa').textContent = empresa;
+          document.getElementById('porcentagem').textContent = porcentagem + '%';
+          document.getElementById('nivel').textContent = nivel;
+          document.getElementById('nivel').className = 'nivel ' + 
+            (porcentagem >= 80 ? 'risco-baixo' : porcentagem >= 50 ? 'risco-medio' : 'risco-alto');
+
+          document.getElementById('form-quiz').style.display = 'none';
+          document.getElementById('resultado').style.display = 'block';
+        })
+        .catch(error => {
+          console.error('Erro ao enviar e-mail:', error);
+          alert('Erro ao enviar relatório. Mas seus dados foram registrados.');
+          // Mesmo com erro, mostra o resultado
+          document.getElementById('nome-empresa').textContent = empresa;
+          document.getElementById('porcentagem').textContent = porcentagem + '%';
+          document.getElementById('nivel').textContent = nivel;
+          document.getElementById('form-quiz').style.display = 'none';
+          document.getElementById('resultado').style.display = 'block';
+        });
     });
   </script>
 </body>
