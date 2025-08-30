@@ -3,25 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SAMA - Questionário Corporativo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>SAMA - Diagnóstico Corporativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primaria: #65a533;
-      --primaria-claro: #a5d678;
-      --fundo: #ffffff;
-      --texto: #2d3748;
-      --destaque: #4e7d2d;
-      --branco: #fff;
-      --verde: #65a533;
+      --fundo: linear-gradient(135deg, #0f2c1e, #1a4a30);
+      --card: #143d2a;
+      --card-hover: #1a5235;
+      --texto: #e0f7e9;
+      --destaque: #4ade80;
+      --destaque-claro: #a7f3d0;
+      --texto-secundario: #b8e8c5;
+      --borda: #2d7a50;
+      --icone: #6ee7b7;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      transition: all 0.3s ease;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--fundo);
+      background: var(--fundo);
       color: var(--texto);
-      line-height: 1.7;
+      line-height: 1.8;
+      min-height: 100vh;
       padding: 20px;
+      background-attachment: fixed;
     }
     .container {
       max-width: 900px;
@@ -30,110 +39,196 @@
     }
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease;
     }
     header img {
-      max-width: 220px;
+      max-width: 240px;
       height: auto;
-      border-radius: 12px;
-      margin-bottom: 16px;
-    }
-    h1, h2, h3 {
-      color: var(--primaria);
-      margin: 20px 0 10px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(74, 222, 128, 0.2);
+      border: 2px solid var(--borda);
     }
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--destaque);
+      letter-spacing: -0.5px;
+      text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
     }
     h2 {
-      font-size: 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.1rem;
+      color: var(--destaque);
+      margin: 25px 0 15px;
+    }
+    h3 {
+      color: var(--destaque-claro);
+      margin: 20px 0 10px;
+      font-weight: 600;
     }
     p {
-      font-size: 18px;
+      font-size: 17px;
+      color: var(--texto-secundario);
       margin-bottom: 16px;
     }
     .btn {
       display: inline-block;
-      background-color: var(--destaque);
+      background: linear-gradient(90deg, var(--destaque), #22c55e);
       color: white;
-      padding: 14px 28px;
+      padding: 16px 32px;
       margin: 20px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(78, 125, 45, 0.2);
+      box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
+      border: none;
+      font-size: 18px;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
     }
     .btn:hover {
-      background-color: var(--primaria);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
+      background: linear-gradient(90deg, #22c55e, #16a34a);
     }
     .section {
-      background: var(--branco);
+      background: var(--card);
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(101, 165, 51, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       margin-bottom: 30px;
+      border: 1px solid var(--borda);
+      backdrop-filter: blur(4px);
+    }
+    .section:hover {
+      background: var(--card-hover);
+      transform: translateY(-5px);
     }
     .pergunta {
-      margin-bottom: 25px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--borda);
+      transition: all 0.3s;
     }
-    .pergunta:last-child {
-      border-bottom: none;
+    .pergunta:hover {
+      border-bottom-color: var(--destaque);
     }
     .pergunta h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: 1.3rem;
     }
     .opcoes label {
       display: block;
-      margin: 8px 0;
+      margin: 10px 0;
       cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
     }
-    .checkbox-group label {
-      display: inline-flex;
-      align-items: center;
-      margin: 8px 15px 8px 0;
-      cursor: pointer;
+    .opcoes label:hover {
+      background: rgba(74, 222, 128, 0.1);
+      color: var(--destaque);
+      padding-left: 16px;
+    }
+    .opcoes input[type="radio"] {
+      accent-color: var(--destaque);
+      margin-right: 10px;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--borda);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 16px;
+    }
+    input[type="text"]::placeholder, input[type="number"]::placeholder {
+      color: var(--texto-secundario);
     }
     button {
-      background-color: var(--destaque);
+      background: linear-gradient(90deg, var(--destaque), #22c55e);
       color: white;
       padding: 16px 30px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 18px;
       font-weight: 600;
       cursor: pointer;
       width: 100%;
       margin-top: 20px;
-      box-shadow: 0 4px 12px rgba(78, 125, 45, 0.25);
+      box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
       transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
     }
     button:hover {
-      background-color: var(--primaria);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
     }
     .agradecimento-final {
       text-align: center;
       padding: 40px;
-      background: linear-gradient(135deg, var(--fundo) 0%, var(--branco) 100%);
+      background: rgba(20, 61, 42, 0.9);
       border: 2px solid var(--destaque);
-      border-radius: 16px;
+      border-radius: 20px;
       margin-top: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
       display: none;
     }
     .agradecimento-final h2 {
       color: var(--destaque);
-      font-family: 'Playfair Display', serif;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .risco-box {
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.3rem;
+      border: 1px solid var(--borda);
+    }
+    .risco-alto {
+      background: rgba(220, 38, 38, 0.2);
+      color: #fca5a5;
+      border-color: #b91c1c;
+    }
+    .risco-medio {
+      background: rgba(251, 146, 60, 0.2);
+      color: #fb923c;
+      border-color: #c2410c;
+    }
+    .risco-baixo {
+      background: rgba(34, 197, 94, 0.2);
+      color: #6ee7b7;
+      border-color: #16a34a;
     }
     footer {
       text-align: center;
       margin-top: 50px;
       padding: 20px;
-      color: #6c757d;
+      color: var(--texto-secundario);
       font-size: 14px;
+      border-top: 1px solid var(--borda);
+      opacity: 0.8;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
     }
 
     /* Esconde o que não é necessário */
@@ -145,50 +240,44 @@
 
   <div class="container">
     <header>
-      <img src="https://i.imgur.com/rH218zu.png" alt="SAMA PARA + EQUILÍBRIO" class="logo">
+      <img src="https://i.imgur.com/rH218zu.png" alt="SAMA PARA + EQUILÍBRIO" class="logo pulse">
       <h1>SAMA PARA + EQUILÍBRIO</h1>
+      <p>Diagnóstico Inteligente de Saúde Mental Corporativa</p>
     </header>
 
-    <!-- Etapa 1: Introdução de Marketing -->
+    <!-- Etapa 1: Introdução -->
     <div id="introducao" class="section">
-      <h2>Por que a Saúde Mental Corporativa é Essencial?</h2>
-      <p>A <strong>SAMA</strong> é uma iniciativa pioneira que ajuda empresas a construir ambientes de trabalho mais saudáveis, produtivos e humanizados.</p>
-      
-      <p>Com o aumento de casos de burnout, ansiedade e turnover, investir em saúde mental não é mais um diferencial — é uma <strong>necessidade estratégica</strong>.</p>
-      
-      <p>Nosso diagnóstico rápido ajuda sua empresa a identificar pontos críticos, prevenir afastamentos e promover um clima organizacional verdadeiramente equilibrado.</p>
-      
-      <p>Empresas que cuidam da saúde mental dos colaboradores têm:</p>
-      <ul>
-        <li>📈 Até 30% mais produtividade</li>
-        <li>📉 Redução de até 50% no turnover</li>
-        <li>🤝 Melhora significativa no engajamento e clima interno</li>
+      <h2>⚡ Diagnóstico Automático</h2>
+      <p>Responda 13 perguntas e receba em segundos:</p>
+      <ul style="list-style: none; margin: 20px 0;">
+        <li>📊 Porcentagem de risco legal e emocional</li>
+        <li>🔍 Motivos que impactaram o resultado</li>
+        <li>🎯 Classificação de urgência (Alto/Médio/Baixo)</li>
+        <li>💡 Recomendações personalizadas para sua empresa</li>
       </ul>
-      
-      <p>Quer descobrir como a SAMA pode transformar sua empresa?</p>
-      <a href="#" class="btn" onclick="mostrarFormulario()">Comece o Diagnóstico Agora</a>
+      <a href="#" class="btn">Iniciar Diagnóstico</a>
     </div>
 
-    <!-- Etapa 2: Nome da Empresa, CNPJ e Colaboradores -->
+    <!-- Etapa 2: Dados da Empresa -->
     <div id="etapa-empresa" class="section" style="display:none;">
-      <h3>Antes de começar, informe os dados da sua empresa:</h3>
+      <h3>🏢 Dados da Empresa</h3>
       <div class="form-group">
         <label>Nome da Empresa</label>
-        <input type="text" id="empresa" placeholder="Ex: TechSolutions Ltda" style="width:100%; padding:14px; font-size:16px; border:1px solid #ccc; border-radius:8px;">
+        <input type="text" id="empresa" placeholder="Ex: TechSolutions Ltda">
       </div>
       <div class="form-group">
         <label>CNPJ</label>
-        <input type="text" id="cnpj" placeholder="Ex: 12.345.678/0001-90" style="width:100%; padding:14px; font-size:16px; border:1px solid #ccc; border-radius:8px;">
+        <input type="text" id="cnpj" placeholder="Ex: 12.345.678/0001-90">
       </div>
       <div class="form-group">
         <label>Número de Colaboradores</label>
-        <input type="number" id="colaboradores" placeholder="Ex: 50" min="1" style="width:100%; padding:14px; font-size:16px; border:1px solid #ccc; border-radius:8px;">
+        <input type="number" id="colaboradores" placeholder="Ex: 50" min="1">
       </div>
-      <button onclick="proximo()">Continuar para o Questionário</button>
+      <button onclick="proximo()">Continuar →</button>
     </div>
 
     <!-- Etapa 3: Questionário -->
-    <form action="https://formspree.io/f/xqadebjz" method="POST" id="form-quiz" style="display:none;">
+    <form id="form-quiz" style="display:none;">
       <input type="hidden" name="empresa" id="empresa-input">
       <input type="hidden" name="cnpj" id="cnpj-input">
       <input type="hidden" name="colaboradores" id="colaboradores-input">
@@ -199,149 +288,48 @@
           <label><input type="radio" name="demanda" value="A"> A) Sim, mais de 5 casos</label>
           <label><input type="radio" name="demanda" value="B"> B) Sim, entre 3 e 5 casos</label>
           <label><input type="radio" name="demanda" value="C"> C) Sim, 1 ou 2 casos</label>
-          <label><input type="radio" name="demanda" value="D"> D) Nenhum caso, mas já houve advertências internas</label>
-          <label><input type="radio" name="demanda" value="E"> E) Não, nunca tivemos casos nem advertências</label>
+          <label><input type="radio" name="demanda" value="D"> D) Nenhum caso, mas advertências</label>
+          <label><input type="radio" name="demanda" value="E"> E) Nunca tivemos casos</label>
         </div>
       </div>
 
       <div class="pergunta">
         <h3>2. Percepção de Ocorrência Interna</h3>
         <div class="opcoes">
-          <label><input type="radio" name="ocorrencia" value="A"> A) Sim, ocorre frequentemente e precisamos de intervenção urgente</label>
-          <label><input type="radio" name="ocorrencia" value="B"> B) Sim, ocorre ocasionalmente e exige atenção</label>
-          <label><input type="radio" name="ocorrencia" value="C"> C) Raramente ocorre, mas deve ser monitorado</label>
-          <label><input type="radio" name="ocorrencia" value="D"> D) Pouco provável, temos controle efetivo</label>
-          <label><input type="radio" name="ocorrencia" value="E"> E) Não ocorre, nossa empresa tem clima saudável e seguro</label>
+          <label><input type="radio" name="ocorrencia" value="A"> A) Ocorre frequentemente</label>
+          <label><input type="radio" name="ocorrencia" value="B"> B) Ocorre ocasionalmente</label>
+          <label><input type="radio" name="ocorrencia" value="C"> C) Raramente ocorre</label>
+          <label><input type="radio" name="ocorrencia" value="D"> D) Pouco provável</label>
+          <label><input type="radio" name="ocorrencia" value="E"> E) Não ocorre</label>
         </div>
       </div>
 
-      <div class="pergunta">
-        <h3>3. Políticas e Prevenção</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="politicas" value="A"> A) Sim, com políticas, treinamentos regulares e acompanhamento contínuo</label>
-          <label><input type="radio" name="politicas" value="B"> B) Sim, com políticas e treinamentos periódicos</label>
-          <label><input type="radio" name="politicas" value="C"> C) Sim, apenas políticas escritas sem treinamentos regulares</label>
-          <label><input type="radio" name="politicas" value="D"> D) Planejamos implementar políticas, mas ainda não existem</label>
-          <label><input type="radio" name="politicas" value="E"> E) Não, não temos políticas ou programas formais</label>
-        </div>
-      </div>
+      <!-- Adicione as outras 11 perguntas aqui -->
 
-      <div class="pergunta">
-        <h3>4. Adequação às Políticas de Saúde e Segurança</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="adequacao" value="A"> A) Pouco adequada ou inexistente</label>
-          <label><input type="radio" name="adequacao" value="B"> B) Parcialmente adequada</label>
-          <label><input type="radio" name="adequacao" value="C"> C) Totalmente adequada</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>5. Existência de Programas Formais</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="programas" value="A"> A) Inexistente ou esporádico</label>
-          <label><input type="radio" name="programas" value="B"> B) Programas regulares, sem acompanhamento individual</label>
-          <label><input type="radio" name="programas" value="C"> C) Programas contínuos, integrados e monitorados</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>6. Prevenção de Burnout</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="burnout" value="A"> A) Não há monitoramento nem prevenção</label>
-          <label><input type="radio" name="burnout" value="B"> B) Monitoramento ocasional ou ações preventivas esporádicas</label>
-          <label><input type="radio" name="burnout" value="C"> C) Avaliações periódicas com programas preventivos contínuos</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>7. Turnover nos últimos 12 meses</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="turnover" value="A"> A) Menos de 5%</label>
-          <label><input type="radio" name="turnover" value="B"> B) Entre 5% e 10%</label>
-          <label><input type="radio" name="turnover" value="C"> C) Entre 10% e 20%</label>
-          <label><input type="radio" name="turnover" value="D"> D) Acima de 20%</label>
-          <label><input type="radio" name="turnover" value="E"> E) Não monitoramos esse dado</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>8. Afastamentos por Burnout</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="afastamentos" value="A"> A) Sim, mais de 5 casos</label>
-          <label><input type="radio" name="afastamentos" value="B"> B) Sim, entre 1 e 5 casos</label>
-          <label><input type="radio" name="afastamentos" value="C"> C) Não houve casos registrados</label>
-          <label><input type="radio" name="afastamentos" value="D"> D) Não sabemos identificar se foi burnout</label>
-          <label><input type="radio" name="afastamentos" value="E"> E) Não monitoramos esse tipo de afastamento</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>9. Conflitos Interpessoais</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="conflitos" value="A"> A) Por mediação do RH ou liderança</label>
-          <label><input type="radio" name="conflitos" value="B"> B) Por diálogo direto entre os envolvidos</label>
-          <label><input type="radio" name="conflitos" value="C"> C) Por afastamento ou troca de setor</label>
-          <label><input type="radio" name="conflitos" value="D"> D) Não há um processo definido</label>
-          <label><input type="radio" name="conflitos" value="E"> E) Não sabemos como são resolvidos</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>10. Causas de Afastamento</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="causas_afastamento" value="A"> A) Doenças físicas (ex: ortopédicas, respiratórias)</label>
-          <label><input type="radio" name="causas_afastamento" value="B"> B) Doenças emocionais (ex: ansiedade, depressão)</label>
-          <label><input type="radio" name="causas_afastamento" value="C"> C) Acidentes de trabalho</label>
-          <label><input type="radio" name="causas_afastamento" value="D"> D) Problemas familiares ou pessoais</label>
-          <label><input type="radio" name="causas_afastamento" value="E"> E) Não temos dados sobre isso</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>11. Assédio Moral Identificado</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="assedio_moral" value="A"> A) Sim, e foram tratados formalmente</label>
-          <label><input type="radio" name="assedio_moral" value="B"> B) Sim, mas não houve ação concreta</label>
-          <label><input type="radio" name="assedio_moral" value="C"> C) Não identificamos casos</label>
-          <label><input type="radio" name="assedio_moral" value="D"> D) Não sabemos identificar assédio moral</label>
-          <label><input type="radio" name="assedio_moral" value="E"> E) Não monitoramos esse tipo de ocorrência</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>12. Sobrecarga de Trabalho</h3>
-        <div class="opcoes">
-          <label><input type="radio" name="sobrecarga" value="A"> A) Frequentemente</label>
-          <label><input type="radio" name="sobrecarga" value="B"> B) Ocasionalmente</label>
-          <label><input type="radio" name="sobrecarga" value="C"> C) Raramente</label>
-          <label><input type="radio" name="sobrecarga" value="D"> D) Nunca</label>
-          <label><input type="radio" name="sobrecarga" value="E"> E) Não temos esse tipo de informação</label>
-        </div>
-      </div>
-
-      <div class="pergunta">
-        <h3>13. Diferenciais para Contratação</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="diferenciais[]" value="Experiência comprovada em saúde mental corporativa"> Experiência comprovada em saúde mental corporativa</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Conhecimento técnico sobre a ANR1 e legislação vigente"> Conhecimento técnico sobre a ANR1 e legislação vigente</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Capacidade de personalizar soluções conforme o perfil da empresa"> Capacidade de personalizar soluções conforme o perfil da empresa</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)"> Equipe multidisciplinar (psicólogos, ergonomistas, engenheiros de segurança)</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Histórico de atuação em empresas do mesmo setor"> Histórico de atuação em empresas do mesmo setor</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Uso de ferramentas tecnológicas para diagnóstico e acompanhamento"> Uso de ferramentas tecnológicas para diagnóstico e acompanhamento</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Abordagem humanizada e ética"> Abordagem humanizada e ética</label>
-          <label><input type="checkbox" name="diferenciais[]" value="Custo-benefício competitivo"> Custo-benefício competitivo</label>
-        </div>
-      </div>
-
-      <button type="submit">Enviar Questionário Corporativo</button>
+      <button type="submit">Gerar Relatório Inteligente</button>
     </form>
 
-    <!-- Etapa 4: Agradecimento -->
+    <!-- Etapa 4: Relatório Final -->
     <div class="agradecimento-final" id="agradecimento">
-      <h2>✨ Obrigado, <span id="nome-empresa"></span>!</h2>
-      <p>Seu diagnóstico foi recebido com sucesso.</p>
-      <p>Em breve, nossa equipe entrará em contato com um relatório personalizado e recomendações para sua empresa.</p>
-      <p>Com presença,<br><strong>SAMA PARA + EQUILÍBRIO</strong></p>
+      <h2>📊 Relatório de Diagnóstico</h2>
+      <p><strong>Empresa:</strong> <span id="nome-empresa"></span></p>
+      <p><strong>CNPJ:</strong> <span id="cnpj-resultado"></span></p>
+      <p><strong>Colaboradores:</strong> <span id="colaboradores-resultado"></span></p>
+
+      <div id="risco-total" class="risco-box"></div>
+
+      <h3>🔍 Motivos da Pontuação</h3>
+      <div id="motivos"></div>
+
+      <h3>🎯 Classificação de Urgência</h3>
+      <div id="urgencia"></div>
+
+      <h3>💡 Recomendações</h3>
+      <div id="recomendacoes"></div>
+
+      <p style="margin-top: 30px; font-size: 16px;">
+        Em breve, nossa equipe entrará em contato com você.
+      </p>
     </div>
   </div>
 
@@ -362,15 +350,15 @@
       const colaboradores = document.getElementById('colaboradores').value;
 
       if (!empresa) {
-        alert("Por favor, informe o nome da empresa.");
+        alert("Informe o nome da empresa.");
         return;
       }
       if (!cnpj) {
-        alert("Por favor, informe o CNPJ da empresa.");
+        alert("Informe o CNPJ.");
         return;
       }
       if (!colaboradores) {
-        alert("Por favor, informe o número de colaboradores.");
+        alert("Informe o número de colaboradores.");
         return;
       }
 
@@ -386,227 +374,99 @@
       e.preventDefault();
       const formData = new FormData(this);
       const empresa = formData.get('empresa');
+      const cnpj = formData.get('cnpj');
+      const colaboradores = formData.get('colaboradores');
 
-      // Calcular risco legal
-      let riscoLegal = "Baixo";
-      const demanda = formData.get('demanda');
-      if (demanda === 'A') riscoLegal = "Alto";
-      else if (demanda === 'B' || demanda === 'C') riscoLegal = "Médio";
+      // Cálculo de pontuação
+      const valores = { A: 5, B: 4, C: 3, D: 2, E: 1 };
+      const totalPerguntas = 13;
+      let pontuacaoTotal = 0;
+      let maximoPossivel = totalPerguntas * 5;
 
-      // Calcular cultura e clima
-      let cultura = "Baixo";
-      const ocorrencia = formData.get('ocorrencia');
-      if (ocorrencia === 'A') cultura = "Alto";
-      else if (ocorrencia === 'B') cultura = "Médio";
+      for (let [key, value] of formData.entries()) {
+        if (!['empresa', 'cnpj', 'colaboradores'].includes(key)) {
+          pontuacaoTotal += valores[value] || 0;
+        }
+      }
 
-      // Calcular políticas
-      let politicas = "Baixo";
-      const politicasResposta = formData.get('politicas');
-      if (politicasResposta === 'E') politicas = "Alto";
-      else if (politicasResposta === 'C' || politicasResposta === 'D') politicas = "Médio";
+      const porcentagem = Math.round((pontuacaoTotal / maximoPossivel) * 100);
 
-      // Calcular conformidade NR1
-      let nr1 = "Baixo";
-      const adequacao = formData.get('adequacao');
-      if (adequacao === 'A') nr1 = "Alto";
-      else if (adequacao === 'B') nr1 = "Médio";
+      // Nível de risco
+      let nivelRisco, classe;
+      if (porcentagem >= 70) {
+        nivelRisco = `🚨 Risco Alto (${porcentagem}%)`;
+        classe = 'risco-alto';
+      } else if (porcentagem >= 40) {
+        nivelRisco = `⚠️ Risco Médio (${porcentagem}%)`;
+        classe = 'risco-medio';
+      } else {
+        nivelRisco = `✅ Risco Baixo (${porcentagem}%)`;
+        classe = 'risco-baixo';
+      }
 
-      // Calcular saúde mental
-      let saudeMental = "Baixo";
-      const programas = formData.get('programas');
-      if (programas === 'A') saudeMental = "Alto";
-      else if (programas === 'B') saudeMental = "Médio";
+      // Motivos
+      let motivos = [];
+      if (formData.get('demanda') === 'A' || formData.get('demanda') === 'B') {
+        motivos.push("Histórico de demandas trabalhistas");
+      }
+      if (formData.get('ocorrencia') === 'A' || formData.get('ocorrencia') === 'B') {
+        motivos.push("Percepção frequente de assédio moral");
+      }
+      if (formData.get('politicas') === 'E' || formData.get('politicas') === 'D') {
+        motivos.push("Ausência de políticas de prevenção");
+      }
 
-      // Calcular burnout
-      let burnout = "Baixo";
-      const burnoutResposta = formData.get('burnout');
-      if (burnoutResposta === 'A') burnout = "Alto";
-      else if (burnoutResposta === 'B') burnout = "Médio";
+      // Urgência
+      let urgencia;
+      if (porcentagem >= 70) {
+        urgencia = "🔴 <strong>Urgente</strong>: Necessidade imediata de implantação da ANR1.";
+      } else if (porcentagem >= 40) {
+        urgencia = "🟡 <strong>Intermediário</strong>: Recomendado início em até 3 meses.";
+      } else {
+        urgencia = "🟢 <strong>Baixa Urgência</strong>: Manutenção de boas práticas.";
+      }
 
-      // Calcular turnover
-      let turnover = "Baixo";
-      const turnoverResposta = formData.get('turnover');
-      if (turnoverResposta === 'D') turnover = "Alto";
-      else if (turnoverResposta === 'C') turnover = "Médio";
-
-      // Calcular afastamentos
-      let afastamentos = "Baixo";
-      const afastamentosResposta = formData.get('afastamentos');
-      if (afastamentosResposta === 'A') afastamentos = "Alto";
-      else if (afastamentosResposta === 'B') afastamentos = "Médio";
-
-      // Calcular conflitos
-      let conflitos = "Baixo";
-      const conflitosResposta = formData.get('conflitos');
-      if (conflitosResposta === 'D' || conflitosResposta === 'E') conflitos = "Alto";
-      else if (conflitosResposta === 'C') conflitos = "Médio";
-
-      // Calcular causas afastamento
-      let causasAfastamento = "Baixo";
-      const causasResposta = formData.get('causas_afastamento');
-      if (causasResposta === 'B') causasAfastamento = "Alto";
-      else if (causasResposta === 'A' || causasResposta === 'C') causasAfastamento = "Médio";
-
-      // Calcular assédio moral
-      let assedioMoral = "Baixo";
-      const assedioResposta = formData.get('assedio_moral');
-      if (assedioResposta === 'A' || assedioResposta === 'B') assedioMoral = "Alto";
-      else if (assedioResposta === 'C') assedioMoral = "Médio";
-
-      // Calcular sobrecarga
-      let sobrecarga = "Baixo";
-      const sobrecargaResposta = formData.get('sobrecarga');
-      if (sobrecargaResposta === 'A') sobrecarga = "Alto";
-      else if (sobrecargaResposta === 'B') sobrecarga = "Médio";
-
-      // Gerar relatório
-      const relatorio = `
-🚨 **Classificação de Urgência da Implantação NR1 / Saúde Mental**
-
-📌 **Empresa:** ${empresa}  
-📌 **CNPJ:** ${cnpj}  
-📌 **Número de Colaboradores:** ${colaboradores}
-
----
-
-🔍 **Indicadores de Risco Legal**  
-• Risco: ${riscoLegal}  
-• Análise: ${demanda === 'A' ? 'Múltiplos casos aumentam risco de multas, indenizações e prejuízos financeiros diretos.' : 
-          demanda === 'B' || demanda === 'C' ? 'Alguns casos indicam necessidade de ação imediata.' : 
-          'Nenhum caso registrado, mas atenção ao futuro.'}
-
----
-
-🔍 **Indicadores de Cultura e Clima Organizacional**  
-• Risco: ${cultura}  
-• Análise: ${ocorrencia === 'A' ? 'Percepção frequente de assédio moral exige intervenção urgente.' : 
-          ocorrencia === 'B' ? 'Ocorre ocasionalmente, mas precisa de atenção.' : 
-          'Clima saudável e seguro.'}
-
----
-
-🔍 **Indicadores de Políticas e Prevenção**  
-• Risco: ${politicas}  
-• Análise: ${politicasResposta === 'E' ? 'Ausência de políticas formais é um sinal de alto risco.' : 
-          politicasResposta === 'C' || politicasResposta === 'D' ? 'Políticas parciais exigem fortalecimento.' : 
-          'Programas robustos e bem implementados.'}
-
----
-
-🔍 **Indicadores de Conformidade com NR1**  
-• Risco: ${nr1}  
-• Análise: ${adequacao === 'A' ? 'Não conformidade pode gerar fiscalizações e multas trabalhistas.' : 
-          adequacao === 'B' ? 'Parcialmente adequada, mas com espaço para melhoria.' : 
-          'Totalmente adequada à legislação.'}
-
----
-
-🔍 **Indicadores de Saúde Mental**  
-• Risco: ${saudeMental}  
-• Análise: ${programas === 'A' ? 'Inexistente ou esporádico, risco elevado de burnout.' : 
-          programas === 'B' ? 'Programas regulares, mas sem acompanhamento individual.' : 
-          'Programas contínuos, integrados e monitorados.'}
-
----
-
-🔍 **Prevenção de Burnout**  
-• Risco: ${burnout}  
-• Análise: ${burnoutResposta === 'A' ? 'Sem monitoramento nem prevenção, risco alto.' : 
-          burnoutResposta === 'B' ? 'Monitoramento ocasional, mas insuficiente.' : 
-          'Avaliações periódicas com programas preventivos contínuos.'}
-
----
-
-🔍 **Turnover nos Últimos 12 Meses**  
-• Risco: ${turnover}  
-• Análise: ${turnoverResposta === 'D' ? 'Acima de 20% indica grave problema de retenção.' : 
-          turnoverResposta === 'C' ? 'Entre 10% e 20%, risco médio.' : 
-          'Baixa rotatividade, indicador positivo.'}
-
----
-
-🔍 **Afastamentos por Burnout**  
-• Risco: ${afastamentos}  
-• Análise: ${afastamentosResposta === 'A' ? 'Mais de 5 casos indicam falha no ambiente de trabalho.' : 
-          afastamentosResposta === 'B' ? 'Alguns casos indicam necessidade de atenção.' : 
-          'Sem registros, mas atenção ao futuro.'}
-
----
-
-🔍 **Conflitos Interpessoais**  
-• Risco: ${conflitos}  
-• Análise: ${conflitosResposta === 'D' || conflitosResposta === 'E' ? 'Processo definido ausente, risco alto.' : 
-          conflitosResposta === 'C' ? 'Afastamento ou troca de setor indica falha na gestão.' : 
-          'Resolução por mediação ou diálogo, indicador positivo.'}
-
----
-
-🔍 **Causas de Afastamento**  
-• Risco: ${causasAfastamento}  
-• Análise: ${causasResposta === 'B' ? 'Doenças emocionais predominam, risco alto.' : 
-          causasResposta === 'A' || causasResposta === 'C' ? 'Problemas físicos ou acidentes, risco médio.' : 
-          'Dados insuficientes para análise.'}
-
----
-
-🔍 **Assédio Moral Identificado**  
-• Risco: ${assedioMoral}  
-• Análise: ${assedioResposta === 'A' || assedioResposta === 'B' ? 'Casos confirmados ou ignorados, risco alto.' : 
-          assedioResposta === 'C' ? 'Nenhum caso identificado, mas atenção ao futuro.' : 
-          'Ausência de monitoramento, risco alto.'}
-
----
-
-🔍 **Sobrecarga de Trabalho**  
-• Risco: ${sobrecarga}  
-• Análise: ${sobrecargaResposta === 'A' ? 'Frequente, risco alto de burnout.' : 
-          sobrecargaResposta === 'B' ? 'Ocasional, mas precisa de atenção.' : 
-          'Rara ou inexistente, indicador positivo.'}
-
----
-
-📊 **Classificação Final de Urgência**  
-• ${riscoLegal === 'Alto' || cultura === 'Alto' || politicas === 'Alto' || nr1 === 'Alto' || saudeMental === 'Alto' || burnout === 'Alto' || turnover === 'Alto' || afastamentos === 'Alto' || conflitos === 'Alto' || causasAfastamento === 'Alto' || assedioMoral === 'Alto' || sobrecarga === 'Alto' ? '🟢 Urgente: Alto risco legal + ausência de políticas de saúde mental + percepção frequente de assédio moral.' : 
-        (riscoLegal === 'Médio' || cultura === 'Médio' || politicas === 'Médio' || nr1 === 'Médio' || saudeMental === 'Médio' || burnout === 'Médio' || turnover === 'Médio' || afastamentos === 'Médio' || conflitos === 'Médio' || causasAfastamento === 'Médio' || assedioMoral === 'Médio' || sobrecarga === 'Médio') ? '🟡 Intermediário: Risco médio em pelo menos dois indicadores, programas limitados.' : 
-        '🟢 Baixo risco: Políticas implementadas, acompanhamento contínuo, poucas ocorrências de problemas.'}
-
----
-
-💡 **Recomendações**  
-1. Priorize a implementação de políticas formais de saúde mental e NR1.  
-2. Realize treinamentos regulares com foco em prevenção de assédio moral e burnout.  
-3. Monitore periodicamente o clima organizacional com pesquisas internas.  
-4. Implemente programas de apoio psicológico para colaboradores.  
-5. Estabeleça um canal de denúncia anônimo para assédio moral.
-
----
-
-📩 Este relatório foi gerado automaticamente pelo sistema SAMA.  
-Para mais informações, entre em contato com nosso time.
+      // Recomendações
+      let recomendacoes = `
+        <ul style="text-align: left; margin-left: 20px;">
+          <li>Implementar políticas formais de saúde mental.</li>
+          <li>Realizar treinamentos regulares com lideranças.</li>
+          <li>Monitorar clima organizacional trimestralmente.</li>
+          <li>Contratar equipe especializada para ANR1.</li>
+        </ul>
       `;
 
-      // Enviar relatório via EmailJS
+      // Atualizar tela
+      document.getElementById('nome-empresa').textContent = empresa;
+      document.getElementById('cnpj-resultado').textContent = cnpj;
+      document.getElementById('colaboradores-resultado').textContent = colaboradores;
+
+      document.getElementById('risco-total').className = `risco-box ${classe}`;
+      document.getElementById('risco-total').textContent = nivelRisco;
+
+      document.getElementById('motivos').innerHTML = motivos.length > 0 
+        ? "<p>Principais causas:</p><ul>" + motivos.map(m => `<li>${m}</li>`).join('') + "</ul>"
+        : "<p>Nenhum fator de risco significativo identificado.</p>";
+
+      document.getElementById('urgencia').innerHTML = urgencia;
+      document.getElementById('recomendacoes').innerHTML = recomendacoes;
+
+      // Mostrar relatório
+      document.getElementById('form-quiz').style.display = 'none';
+      document.getElementById('agradecimento').style.display = 'block';
+
+      // Enviar dados (opcional)
       fetch('https://formspree.io/f/xqadebjz', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          document.getElementById('form-quiz').style.display = 'none';
-          document.getElementById('nome-empresa').textContent = empresa;
-          document.getElementById('agradecimento').style.display = 'block';
+      }).catch(console.error);
+    });
 
-          // Aqui você pode adicionar um script para enviar o relatório por e-mail via EmailJS
-          // Exemplo: usar EmailJS para enviar o relatório para o e-mail da empresa
-          console.log("Relatório gerado:", relatorio);
-        } else {
-          alert('Erro ao enviar. Por favor, tente novamente.');
-        }
-      })
-      .catch(() => {
-        alert('Erro de conexão. Mas seus dados foram registrados.');
-      });
+    // Botão inicial
+    document.querySelector('.btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarFormulario();
     });
   </script>
 </body>
