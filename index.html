@@ -138,9 +138,9 @@
     button:hover {
       transform: translateY(-3px);
     }
-    .resultado-box {
+    .mensagem-final {
       text-align: center;
-      padding: 40px;
+      padding: 60px;
       background: var(--branco);
       border-radius: 20px;
       box-shadow: 0 10px 30px var(--sombra);
@@ -148,25 +148,15 @@
       border: 2px solid var(--verde);
       display: none;
     }
-    .porcentagem {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 5rem;
+    .mensagem-final h2 {
       color: var(--verde);
-      margin: 20px 0;
-    }
-    .nivel {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
       margin-bottom: 20px;
     }
-    .risco-alto {
-      color: #e53e3e;
-    }
-    .risco-medio {
-      color: #dd6b20;
-    }
-    .risco-baixo {
-      color: var(--verde);
+    .mensagem-final p {
+      font-size: 1.2rem;
+      color: var(--texto);
+      line-height: 1.8;
     }
     footer {
       text-align: center;
@@ -372,13 +362,12 @@
       <button type="submit">Gerar Relatório e Enviar</button>
     </form>
 
-    <!-- Etapa 4: Resultado -->
-    <div class="resultado-box" id="resultado">
-      <h2>✨ Relatório Enviado!</h2>
-      <p><strong>Empresa:</strong> <span id="nome-empresa"></span></p>
-      <div id="porcentagem" class="porcentagem">76%</div>
-      <div id="nivel" class="nivel">Nível de Conformidade</div>
-      <p>Seu diagnóstico foi recebido com sucesso. Em breve, nossa equipe entrará em contato.</p>
+    <!-- Etapa 4: Mensagem Final -->
+    <div class="mensagem-final" id="mensagem-final">
+      <h2>✨ Obrigado, <span id="nome-empresa"></span>!</h2>
+      <p id="saudacao"></p>
+      <p>Seu diagnóstico foi recebido com sucesso. Em breve, nossa equipe entrará em contato com um relatório personalizado e recomendações para sua empresa.</p>
+      <p>Com presença,<br><strong>SAMA PARA + EQUILÍBRIO</strong></p>
     </div>
   </div>
 
@@ -509,22 +498,43 @@ ${porcentagem >= 80
 
       emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
         .then(() => {
+          // Mostrar mensagem final
           document.getElementById('nome-empresa').textContent = empresa;
-          document.getElementById('porcentagem').textContent = porcentagem + '%';
-          document.getElementById('nivel').textContent = nivel;
-          document.getElementById('nivel').className = 'nivel ' + 
-            (porcentagem >= 80 ? 'risco-baixo' : porcentagem >= 50 ? 'risco-medio' : 'risco-alto');
+
+          // Saudação baseada na hora
+          const agora = new Date();
+          const hora = agora.getHours();
+          let saudacao;
+          if (hora < 12) {
+            saudacao = "Bom dia!";
+          } else if (hora < 18) {
+            saudacao = "Boa tarde!";
+          } else {
+            saudacao = "Boa noite!";
+          }
+          document.getElementById('saudacao').textContent = saudacao;
 
           document.getElementById('form-quiz').style.display = 'none';
-          document.getElementById('resultado').style.display = 'block';
+          document.getElementById('mensagem-final').style.display = 'block';
         })
         .catch(error => {
           console.error('Erro ao enviar e-mail:', error);
           alert('Erro ao enviar relatório. Mas seus dados foram registrados.');
+          // Mesmo com erro, mostra a mensagem final
           document.getElementById('nome-empresa').textContent = empresa;
-          document.getElementById('porcentagem').textContent = porcentagem + '%';
+          const agora = new Date();
+          const hora = agora.getHours();
+          let saudacao;
+          if (hora < 12) {
+            saudacao = "Bom dia!";
+          } else if (hora < 18) {
+            saudacao = "Boa tarde!";
+          } else {
+            saudacao = "Boa noite!";
+          }
+          document.getElementById('saudacao').textContent = saudacao;
           document.getElementById('form-quiz').style.display = 'none';
-          document.getElementById('resultado').style.display = 'block';
+          document.getElementById('mensagem-final').style.display = 'block';
         });
     });
   </script>
